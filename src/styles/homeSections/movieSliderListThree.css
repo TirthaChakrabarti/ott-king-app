@@ -1,0 +1,118 @@
+.cardlist-three-parent {
+    width: 100%;
+    /* height: auto; */
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    font-weight: bolder;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.cardlist-three-wrapper {
+    /* width: 100%; */
+    /* height: auto; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 95vw;
+    overflow: hidden;
+    padding: 0 50px;
+}
+
+.cardlist-three {
+    height: auto;
+    width: max-content;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-top: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+.cardlist-three div {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 6px 6px 8px rgba(31, 94, 255, 0.5);
+    transition: all 0.4s linear;
+    flex-shrink: 0;
+}
+
+.cardlist-three div:hover {
+    transform: scale(1.05);
+    box-shadow: 8px 8px 10px rgba(71, 117, 234, 0.5);
+}
+
+.cardlist-three div img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; 
+    border-radius: 10px; 
+}
+
+/* Scrolling */
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 110px;
+    width: 27px;
+    background-color: rgba(65, 75, 254, 0.5);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: 300;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.arrow:hover {
+    background-color: rgb(68, 95, 149);
+}
+
+@media (max-width: 480px) {
+    .cardlist-three-wrapper {
+        padding: 0 10px;  /* Minimal padding for very small screens */
+    }
+
+    .cardlist-three {
+        gap: 10px;  /* Further reduce gap */
+    }
+
+    .cardlist-three div {
+        width: 150px;  /* Reduce card size significantly for very small screens */
+        height: 120px;
+    }
+
+    .arrow {
+        height: 70px;
+        width: 20px;
+        font-size: 0.6em;
+    }
+
+    .cardlist-three-parent {
+        font-size: 20px;  /* Smallest font size for mobile */
+    }
+}

@@ -1,0 +1,90 @@
+/* Price Section */
+.price-parent {
+  width: 96%;
+  position: relative;
+  background: linear-gradient(180deg, #102c5e, #0a1128);
+  padding: 60px 20px;
+  color: #e0f7ff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.price-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Overlay effect */
+  z-index: 1;
+}
+
+.price-content {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2; /* Ensure content is above the overlay */
+}
+
+.price-heading {
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #29d8ff;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(0, 119, 255, 0.8);
+}
+
+.price-section-wrapper {
+  width: 100%;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+  align-items: center;
+  /* gap: 10px; */
+}
+
+/* .price-content a {
+  text-decoration: none;
+} */
+
+.home-button {
+  background-color: #ffdd57;
+  border: none;
+  color: #001f54;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #ffc107;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 400px) {
+  .price-parent {
+    padding: 40px 10px; /* Reduce padding */
+  }
+
+  .price-heading {
+    font-size: 1.8rem; /* Adjust font size for smaller screens */
+    margin-bottom: 20px; /* Reduce margin */
+  }
+
+  .price-section-wrapper {
+    flex-direction: column; /* Stack content vertically */
+    gap: 20px; /* Add spacing between items */
+  }
+
+  .home-button {
+    font-size: 0.9rem; /* Reduce font size */
+    padding: 8px 15px; /* Adjust padding for smaller button */
+  }
+}

@@ -1,4 +1,47 @@
-.App {
+.main {
+  background: linear-gradient(-35deg, rgb(9, 9, 40), rgb(0, 0, 18));
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.main-background.with-gradient::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 20%, rgba(0, 0, 0, 0) 35%);
+  z-index: 2;
+  pointer-events: none; /* Allows interaction with content below */
+  transition: all 0.5s ease;
+  /* opacity: 0; */
+}
+
+/* Gradually appear when the section is not visible */
+/* .main-background.with-gradient.active::before {
+  opacity: 1; 
+} */
+
+@media only screen and (max-width: 400px) {
+  .main-background {
+      background: linear-gradient(135deg, rgb(15, 5, 5), rgb(30, 10, 25), rgb(15, 5, 5)); /* Slightly lighter for visibility */
+      padding-bottom: 10px;
+  }
+
+  .main-background.with-gradient::before {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 25%, rgba(0, 0, 0, 0) 40%); /* Adjust gradient for better fit */
+  }
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +78,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

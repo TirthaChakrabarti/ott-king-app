@@ -1,0 +1,121 @@
+.animation {
+    width: 90%; /* Full width of the container */
+    height: 90vh; /* 75% of the viewport height, adjust as necessary */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Ensures that slides are positioned relative to this container */
+    margin: 25px auto; /* Center the animation container */
+    overflow: hidden; /* Prevent overflow of slides */
+    padding: 0; /* Remove any padding */
+    border-top: 3px solid rgb(83, 111, 250);
+    border-left: 3px solid rgb(83, 111, 250);
+    border-radius: 20px;
+}
+
+.slides {
+    width: 100%; /* Fill the width of the container */
+    height: 100%; /* Fill the height of the container */
+    position: absolute; /* Position absolutely within the container */
+    top: 0;
+    left: 0;
+    object-fit: cover; /* Ensure video covers the entire area */
+    opacity: 0; /* Initially hide the slides */
+    transition: opacity 1s ease-in-out; /* Smooth fade transition */
+    z-index: 0;
+}
+
+.slides.active {
+    opacity: 1; /* Make the active slide visible */
+    z-index: 1; /* Bring the active slide to the front */
+}
+
+/* Optional: smooth fade effect with keyframes */
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.animation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(173, 172, 172, 0.2) 5%, rgba(0, 0, 0, 0) 22%);
+    z-index: 2;
+    pointer-events: none;
+}
+  
+.caption {
+    position: absolute;
+    bottom: 10px;
+    width: 55%;
+    text-align: center;
+    color: white;
+    /* font-size: 2em; */
+    font-weight: bold;
+    text-shadow: 1px;
+    z-index: 2;
+}
+
+#main-caption {
+    padding-top: 60vh;
+    padding-bottom: 5px;
+    font-size: 4em;
+    font-weight: bolder;
+    line-height: 1.1;
+}
+
+#sub-section {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: lightgray;
+    padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 400px) {
+    .animation {
+        width: 90%;
+        height: 50vh;
+        margin: 15px auto;
+        border-top: 2px solid rgb(170, 170, 170);
+        border-left: 2px solid rgb(170, 170, 170);
+        border-radius: 15px;
+    }
+
+    .caption {
+        width: 80%; /* Narrower for smaller screens */
+    }
+
+    #main-caption {
+        padding-top: 80vh;
+        font-size: 2em;
+        line-height: 0.8;
+    }
+
+    #sub-section {
+        font-size: 1em; /* Smaller font size */
+        padding-bottom: 10px;
+    }
+
+    .gradient-overlay {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 35%, rgba(0, 0, 0, 0) 55%);
+    }
+}
+
