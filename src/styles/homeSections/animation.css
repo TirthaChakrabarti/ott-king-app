@@ -1,5 +1,5 @@
 .animation {
-    width: 90%; /* Full width of the container */
+    width: 85%; /* Full width of the container */
     height: 90vh; /* 75% of the viewport height, adjust as necessary */
     display: flex; /* Use flexbox for centering */
     justify-content: center; /* Center horizontally */
@@ -64,8 +64,8 @@
   
 .caption {
     position: absolute;
-    bottom: 10px;
-    width: 55%;
+    bottom: 5px;
+    width: 65%;
     text-align: center;
     color: white;
     /* font-size: 2em; */

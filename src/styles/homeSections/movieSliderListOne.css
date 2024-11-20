@@ -98,6 +98,11 @@
     text-align: center; /* Center align the text */
 }
 
+.cardlist-title {
+    /* margin-left: 100px; */
+    border: 1px solid;
+}
+
 .cardlist-wrapper {
     position: relative;
     display: flex;

@@ -1,21 +1,19 @@
 .cardlist-two-parent {
-    width: 100%;
-    /* height: auto; */
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
     font-size: 30px;
     font-weight: bolder;
     color: white;
-    /* border: 1px solid red; */
+}
+
+.cardlist-two-title {
+    margin-left: 45px;
 }
 
 .cardlist-two-wrapper {
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 92vw;
+    max-width: 93vw;
     overflow: hidden;
     padding: 0 30px;
 }
@@ -45,7 +43,7 @@
 }
 
 .cardlist-two div:hover {
-    transform: scale(1.05);
+    transform: scale(1.04);
     box-shadow: 8px 8px 10px rgba(86, 128, 232, 0.5);
 }
 

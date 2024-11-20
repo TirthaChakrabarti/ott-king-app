@@ -45,7 +45,8 @@ const AllHomeSections = () => {
             <HomeBannerThree/>
 
             <OTTKingSports/>
-
+            
+            <p className="ottking-special-caption">OTT King Special</p>
             <OTTKingSpecialOne/>
             <OTTKingSpecialTwo/>
 

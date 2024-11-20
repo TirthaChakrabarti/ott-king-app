@@ -2,7 +2,7 @@
 
 .banner-two {
   width: 100vw;
-  height: 60vh; /* Adjust the height as needed */
+  height: 65vh; /* Adjust the height as needed */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,16 +17,16 @@
 }
 
 /* Adding a gradient overlay for better readability */
-.banner-two-parent::before {
+/* .banner-two::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
-  z-index: 1;
-}
+  height: 100%; */
+  /* background: rgba(46, 50, 67, 0.5); Black overlay with 50% opacity */
+  /* z-index: 1;
+} */
 
 .banner-two-details {
   position: relative;
@@ -52,4 +52,38 @@
   font-size: 3rem; /* Larger size for logo/title */
   font-weight: bolder;
   color: rgb(42, 42, 96);
+}
+
+.banner-two-button {
+  margin-top: 10px;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-two-button Button {
+  width: 160px;
+  height: 55px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #2b3a7e, #1d2f61); /* Dark blue gradient for the button */
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  margin: 0 20px;
+}
+
+.banner-two-button Button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.banner-two-button Button:focus {
+  outline: none;
 }

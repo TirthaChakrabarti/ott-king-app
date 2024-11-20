@@ -11,7 +11,7 @@
 }
 
 .plan-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     box-shadow: 0 5px 10px rgba(0, 119, 255, 0.9), 0 0 30px rgba(0, 119, 255, 1);
 }
 

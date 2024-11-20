@@ -106,7 +106,7 @@
 .banner-three-button Button {
   padding: 12px 25px;
   background: linear-gradient(135deg, #2b3a7e, #1d2f61); /* Dark blue gradient for the button */
-  border: none;
+  border: 1px solid #6a7ac1;
   font-size: 1.1rem;
   font-weight: 600;
   color: white;
@@ -119,6 +119,7 @@
 .banner-three-button Button:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  filter: brightness(1.5);
 }
 
 .banner-three-button Button:focus {

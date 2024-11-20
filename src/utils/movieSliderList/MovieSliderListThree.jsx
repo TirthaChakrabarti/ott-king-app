@@ -44,7 +44,7 @@ const MovieSlider = ({ title = "", movies = [] }) => {
 
     return (
         <div className="cardlist-three-parent">
-            <section>{title}</section>
+            <section className="cardlist-three-title">{title}</section>
             <div className="cardlist-three-wrapper">
                 {!isAtStart && (
                     <button className="arrow left-arrow" onClick={scrollLeft}>

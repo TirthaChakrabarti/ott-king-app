@@ -22,6 +22,8 @@ const PriceCard = ({name, price, feature1, feature2, feature3, feature4, logoLis
                 className="pricecard-logo-section"
                 logoList={logoList}
             />
+            <p style={{color: 'cyan', fontSize: '18px', }}>And Many More...</p>
+            <hr style={{color: 'gold'}}/>
             <div>
                 <p id="name">{name}</p>
                 <p id="quality">{price}</p>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import '../../styles/homeSections/banner1.css';
+import { Button } from 'react-bootstrap';
 
 const Banner = ({title, description, image, video }) => {
   return (
@@ -8,6 +9,7 @@ const Banner = ({title, description, image, video }) => {
       <div className="banner-details">
         <h1>{title}</h1>
         <p>{description}</p>
+        <button className='banner-details-button'>Play Now</button>
       </div>
       <div className='banner-video'>
         <iframe

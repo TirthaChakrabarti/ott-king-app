@@ -1,6 +1,6 @@
 import React from "react";
 
-import LargeSmallSection from "../../utils/LargeSmallList/LargeSmallList";
+import LargeSmallSection from "../../utils/SmallCardTwoLineList/SmallTwoLineList";
 
 const DealOfTheWeek = () => {
 

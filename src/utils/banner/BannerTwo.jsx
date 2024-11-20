@@ -13,6 +13,9 @@ const BannerTwo = ({image, preTitle, title, date, logo}) => {
                 <p>{title}</p>
                 <p>{date}</p>
                 <p style={{logo: `url(${logo})`}}></p>
+                <div className='banner-two-button'>
+                    <button className='Button'>Watch Trailer</button>
+                </div>
             </div>
         </section>
     )
