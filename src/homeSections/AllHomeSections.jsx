@@ -3,7 +3,6 @@ import React from "react";
 import '../styles/home/Homepage.css';
 
 import Animation from "./sections/Animation";
-import LogosSection from "./sections/LogoSection";
 import NewlyReleasedMoviesList from "./sections/NewRelease";
 import TrendingTVShows from "./sections/TrendingTVShows";
 import DealOfTheWeek from "./sections/DealOfTheWeek";
@@ -17,13 +16,19 @@ import OTTKingSpecialTwo from "./sections/OTTKingSpecialTwo";
 import HomeBannerOne from "./sections/HomeBannerOne";
 import HomeBannerTwo from "./sections/HomeBannerTwo";
 import HomeBannerThree from "./sections/HomeBannerThree";
+import HomeLogoSlider from "./sections/HomeLogoSlider";
+
 
 
 const AllHomeSections = () => {
     return (
         <section className="sections">
             <Animation/>
-            <LogosSection/>
+            {/* <LogosSection/> */}
+            {/* <HomeMovingLogoSection/> */}
+            {/* <LogoMarquee/> */}
+
+            <HomeLogoSlider/>
 
             <TrendingMovieList/>
             <NewlyReleasedMoviesList/>

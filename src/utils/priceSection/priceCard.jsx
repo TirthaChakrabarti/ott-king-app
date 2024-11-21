@@ -1,7 +1,6 @@
 import React from "react";
 
 import '../../styles/home/priceCard.css';
-import { Button } from "react-bootstrap";
 
 import LogoSection from '../../utils/LogoSection/LogoSection';
 
@@ -14,20 +13,36 @@ import LogoSection from '../../utils/LogoSection/LogoSection';
 //     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcgcwWkYHYoyEQgeLZNszkwQo135F_JfVR6w&s',
 // ]
 
-const PriceCard = ({name, price, feature1, feature2, feature3, feature4, logoList}) => {
+const PriceCard = (
+    {
+        name, 
+        price, 
+        feature1, 
+        feature2, 
+        feature3, 
+        feature4, 
+        logoList,
+        onShowFullList
+    }) => {
+
+    const smallerLogoList = logoList.slice(0, 8);
 
     return (
         <div className="plan-card">
-            <LogoSection 
-                className="pricecard-logo-section"
-                logoList={logoList}
-            />
-            <p style={{color: 'cyan', fontSize: '18px', }}>And Many More...</p>
+           <div>
+                <LogoSection className="pricecard-logo-section" logoList={smallerLogoList} />
+                <button
+                className="plan-card-show-list-button"
+                onClick={onShowFullList}
+                >
+                    Show Full List
+                </button>
+            </div>
             <hr style={{color: 'gold'}}/>
             <div>
                 <p id="name">{name}</p>
                 <p id="quality">{price}</p>
-                <Button variant="primary">Choose Plan</Button>
+                <button className="plan-card-subscribe-button">Choose Plan</button>
                 <div className="features-container">
                     <p className="features">{feature1}</p>
                     <p className="features">{feature2}</p>

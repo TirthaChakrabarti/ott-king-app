@@ -1,5 +1,5 @@
 .animation {
-    width: 85%; /* Full width of the container */
+    width: 93%; /* Full width of the container */
     height: 90vh; /* 75% of the viewport height, adjust as necessary */
     display: flex; /* Use flexbox for centering */
     justify-content: center; /* Center horizontally */
@@ -8,8 +8,10 @@
     margin: 25px auto; /* Center the animation container */
     overflow: hidden; /* Prevent overflow of slides */
     padding: 0; /* Remove any padding */
-    border-top: 3px solid rgb(83, 111, 250);
-    border-left: 3px solid rgb(83, 111, 250);
+    /* border-top: 3px solid rgb(83, 111, 250);
+    border-left: 3px solid rgb(83, 111, 250); */
+    border-top: 3px solid rgb(178, 151, 1);
+    border-left: 3px solid rgb(178, 151, 1);
     border-radius: 20px;
 }
 

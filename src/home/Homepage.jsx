@@ -6,7 +6,7 @@ import '../styles/home/Homepage.css';
 
 const Homepage = () => {
     return (
-        <section>
+        <section style={{maxWidth: '100%'}}>
             <HomeSections/>
         </section>
     )

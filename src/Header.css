@@ -1,11 +1,11 @@
 .header {
-    width: 85%;
+    width: 90%;
     height: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 30px;
-    padding: 17px 18px;
+    margin-top: 35px;
+    padding: 15px 16px;
 }
 
 .app-logo {
@@ -41,13 +41,19 @@
   }
   
   .header-button {
-    font-weight: 600;
+    width: 150px;
+    height: 40px;
+    font-weight: 500;
     padding: 10px 20px; /* Adjust padding for a more prominent button */
     font-size: 18px; /* Set font size to be readable */
     border-radius: 8px; /* Slightly rounded corners */
     border: none;
     background: linear-gradient(145deg, #4070a2, #01518e); /* Vibrant blue gradient */
     color: white; /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     cursor: pointer; /* Pointer on hover */
     transition: all 0.3s linear; /* Smooth transition for hover effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
@@ -72,12 +78,12 @@
   .search-input {
     padding: 8px 8px;
     font-size: 14px;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     border-radius: 10px;
     outline: none;
     transition: border-color 0.3s;
     width: 280px;
-    height: 50px;
+    height: 40px;
     background: transparent;
     color: darkgray;
   }

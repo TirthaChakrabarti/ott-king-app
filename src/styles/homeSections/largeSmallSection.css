@@ -11,7 +11,8 @@
     font-weight: bold;
     margin-bottom: 0;
     padding-left: 35px;
-    color: white;
+    /* color: white; */
+    color: gold;
 }
 
 .large-small-section {
