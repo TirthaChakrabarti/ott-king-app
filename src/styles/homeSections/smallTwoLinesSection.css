@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
     padding-left: 50px;
     padding-right: 50px;
     height: 480px; 
@@ -19,10 +21,15 @@
 .smallTwolinesCardSection {
     width: 100%;
     height: 100%;
-    padding: 30px;
+    padding: 35px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
+}
+
+.small-cards-div {
+    width: 100%;
+    height: 100%;
 }
 
 .small-card {

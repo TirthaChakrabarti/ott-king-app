@@ -13,7 +13,9 @@ const TrendingMoviesList = [
     "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
 ];
 
-const TrendingMovieList = () => {
+// More detailed list (shifted to App.jsx)
+
+const TrendingMovieList = ({ movies }) => {
     return (
         <div>
             <MovieSlider title="Trending Movies" movies={TrendingMoviesList} />

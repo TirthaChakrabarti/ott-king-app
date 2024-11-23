@@ -8,6 +8,7 @@ const Homepage = () => {
     return (
         <section style={{maxWidth: '100%'}}>
             <HomeSections/>
+            {/* <Link to='/ott-pricing'>Ott Pricing</Link> */}
         </section>
     )
 }

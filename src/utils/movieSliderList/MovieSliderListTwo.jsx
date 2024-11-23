@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-
+import { Link } from "react-router-dom";
 import '../../styles/homeSections/movieSliderListTwo.css';
 
 const MovieSlider = ({ title = "Movies", movies = [] }) => {
@@ -53,8 +53,10 @@ const MovieSlider = ({ title = "Movies", movies = [] }) => {
                 )}
                 <section ref={scrollContainerRef} className="cardlist-two">
                     {movies.map((movie, index) => (
-                        <div key={index}>
-                            <img src={movie} alt={`Movie ${index + 1}`} />
+                        <div key={index} >
+                            <Link to={`/trending-movies/${index}`}>
+                                <img src={movie} alt={`Movie ${index + 1}`} />
+                            </Link>
                         </div>
                     ))}
                 </section>

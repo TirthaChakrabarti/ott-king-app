@@ -5,13 +5,13 @@ import '../../styles/homeSections/logoSection.css';
 const LogoSection = ({ className, logoList = [] }) => {
   return (
     <section className='logo-section-wrapper'>
-      <section className={`logo-section ${className}`}>
+      <div className={`logo-section ${className}`}>
         {logoList.map((logo, index) => (
           <div className="logo-container" key={index}>
             <img src={logo} alt={`Logo ${index}`} className="logo-image" />
           </div>
         ))}
-      </section>
+      </div>
     </section>
   );
 };
