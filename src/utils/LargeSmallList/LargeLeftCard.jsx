@@ -1,6 +1,6 @@
 import React from "react";
 
-const LargeLeftCard = (image, name, season) => {
+const LargeLeftCard = ( {image, name, season} ) => {
     return (
         <div className="large-card">
             <img className="large-poster"

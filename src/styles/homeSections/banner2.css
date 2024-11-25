@@ -87,3 +87,26 @@
 .banner-two-button Button:focus {
   outline: none;
 }
+
+@media (max-width: 400px) {
+  .banner-two {
+    height: 50vh; /* Reduce height for small screens */
+    padding: 10px;
+    text-align: center;
+  }
+
+  .banner-two-details p:first-child {
+    font-size: 1.2rem; /* Smaller pre-title font size */
+  }
+
+  .banner-two-details p:nth-child(2) {
+    font-size: 2rem; /* Adjust title font size */
+  }
+
+  .banner-two-button Button {
+    width: 140px; /* Smaller button size */
+    height: 45px;
+    font-size: 0.9rem; /* Smaller font */
+    margin: 0 10px;
+  }
+}

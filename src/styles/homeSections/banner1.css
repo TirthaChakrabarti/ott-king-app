@@ -90,13 +90,14 @@
 
 @media only screen and (max-width: 600px) {
   .banner {
-    height: 80vh; /* Reduce height for smaller screens */
+    height: auto;
     flex-direction: column; /* Stack the banner sections vertically */
     padding: 20px; /* Adjust padding */
+    gap: 15px;
   }
 
   .banner-details {
-    width: 100%; /* Take full width */
+    width: 90%; /* Take full width */
     margin-left: 0; /* Remove left margin */
     padding: 15px; /* Reduce padding */
   }

@@ -95,13 +95,15 @@
     .cardlist-two-parent {
         margin-top: 0;
         margin-bottom: 0;
+        font-size: 20px;
     }
 
     .cardlist-two-wrapper {
-        padding: 0 10px;  /* Minimal padding for very small screens */
+        padding: 0 0;  /* Minimal padding for very small screens */
     }
 
     .cardlist-two {
+        padding: 0;
         gap: 10px;  /* Further reduce gap */
     }
 
@@ -110,13 +112,13 @@
         height: 180px;
     }
 
+    .cardlist-two-title {
+        margin-left: 0;
+    }
+
     .arrow {
         height: 60px;
         width: 18px;
         font-size: 0.6em;
-    }
-
-    .cardlist-two-parent {
-        font-size: 20px;  /* Smallest font size for mobile */
     }
 }

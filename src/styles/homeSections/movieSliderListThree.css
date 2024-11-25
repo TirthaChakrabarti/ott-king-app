@@ -100,11 +100,12 @@
 
 @media (max-width: 480px) {
     .cardlist-three-wrapper {
-        padding: 0 10px;  /* Minimal padding for very small screens */
+        padding: 0 0;  /* Minimal padding for very small screens */
     }
 
     .cardlist-three {
         gap: 10px;  /* Further reduce gap */
+        padding: 0;
     }
 
     .cardlist-three div {

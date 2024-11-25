@@ -140,7 +140,12 @@
 @media only screen and (max-width: 400px) {
 
     .large-small-section-parent {
-        margin-bottom: 180px;
+        height: auto;
+        margin-bottom: 80px;
+        padding-left: 0;
+        padding-right: 0;
+        /* height: 700px; */
+        font-size: 0.8em;
     }
 
     .large-small-heading {
@@ -148,25 +153,31 @@
     }
 
     .large-small-section {
+        padding: 10px;
         flex-direction: column; /* Stack all content */
         gap: 10px;
     }
 
+    .large-small-heading {
+        padding-left: 10px;
+        font-size: 1.7em;
+    }
+
     .left-large {
         width: 100%; /* Full width for large card */
-        height: 180px;
+        /* height: 220px; */
     }
 
     .right-large {
         width: 100%; /* Full width for small cards */
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         flex-direction: column;
         gap: 10px;
     }
 
     .small-card {
-        height: 150px; /* Adjust small card height */
+        /* height: 150px;  */
     }
 
     .small-card-text {

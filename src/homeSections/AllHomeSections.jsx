@@ -56,6 +56,8 @@ const AllHomeSections = () => {
             <OTTKingSpecialTwo/>
 
             {/* Blogs */}
+
+            <HomeLogoSlider/>
         </section>
     )
 }

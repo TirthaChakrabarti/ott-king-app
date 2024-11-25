@@ -60,27 +60,21 @@
     border-radius: 10px; 
 }
 
-@media (max-width: 480px) {
-    .cardlist-three-wrapper {
-        padding: 0 10px;  /* Minimal padding for very small screens */
+@media (max-width: 400px) {
+    .static-cardlist {
+      flex-wrap: wrap; /* Allow cards to wrap */
+      justify-content: center; /* Center cards */
+      gap: 12px; /* Reduce gaps */
+      padding-top: 0;
+      padding-left: 0;
+      margin-left: 0;
+      margin-right: 0;
     }
-
-    .cardlist-three {
-        gap: 10px;  /* Further reduce gap */
+  
+    .static-cardlist div {
+      width: 40%; /* Adjust card width */
+      height: auto; /* Maintain aspect ratio */
+      padding: 0;
     }
-
-    .cardlist-three div {
-        width: 150px;  /* Reduce card size significantly for very small screens */
-        height: 120px;
-    }
-
-    .arrow {
-        height: 70px;
-        width: 20px;
-        font-size: 0.6em;
-    }
-
-    .cardlist-three-parent {
-        font-size: 20px;  /* Smallest font size for mobile */
-    }
-}
+  }
+  

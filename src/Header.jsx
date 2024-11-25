@@ -1,30 +1,31 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Nav } from "react-bootstrap";
 
+// import { Button, Nav } from "react-bootstrap";
 // import '@fortawesome/fontawesome-free/css/all.min.css';
+// import PriceSection from "./home/PriceSection";
 
 import './Header.css';
-import PriceSection from "./home/PriceSection";
+
 
 const Header = () => {
 
-    const [showPriceSection, setShowPriceSection] = useState(false);
+    // const [showPriceSection, setShowPriceSection] = useState(false);
 
-    const priceSectionClickHandler = () => {
-        sessionStorage.setItem('lastVisitedUrl', window.location.href);
-        setShowPriceSection(true);  
-      };
+    // const priceSectionClickHandler = () => {
+    //     sessionStorage.setItem('lastVisitedUrl', window.location.href);
+    //     setShowPriceSection(true);  
+    //   };
     
-      const hidePriceSection = () => {
-        setShowPriceSection(false);
-      }
+    //   const hidePriceSection = () => {
+    //     setShowPriceSection(false);
+    //   }
 
     return (
         <section className="header">
-            <div className="app-logo">
-                <span className="logo-text">MyApp</span>
-            </div>
+            <Link to="/">
+                <div className="app-logo"></div>
+            </Link>
             <div className="header-options">
                 <Link style={{ textDecoration: 'none' }} to={"/"}>
                     <div className="home-link">Home</div>
