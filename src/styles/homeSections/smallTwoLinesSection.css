@@ -84,7 +84,7 @@
 
 @media (max-width: 400px) {
     .smallTwoLinesCardsection-parent {
-      width: 90%;
+      width: 100%;
       height: auto;
       padding-left: 0;
       padding-right: 0;
@@ -101,6 +101,7 @@
       grid-template-columns: repeat(2, 1fr); /* Single column for cards */
       gap: 10px; /* Smaller gap between cards */
       padding: 20px;
+      padding-bottom: 0;
     }
   
     .small-card {

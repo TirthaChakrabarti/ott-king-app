@@ -97,24 +97,33 @@
   }
 
   .banner-details {
-    width: 90%; /* Take full width */
+    width: 100%; /* Take full width */
     margin-left: 0; /* Remove left margin */
-    padding: 15px; /* Reduce padding */
+    padding: 10px; /* Reduce padding */
   }
 
   .banner-details h1 {
-    font-size: 2.5rem; /* Reduce font size for smaller screens */
+    font-size: 1.5rem; /* Reduce font size for smaller screens */
+    margin-bottom: 0;
   }
 
   .banner-details p {
-    font-size: 1.1rem; /* Slightly smaller text for description */
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1rem; /* Slightly smaller text for description */
+  }
+
+  .banner-details-button {
+    height: 30px;
+    font-size: 1rem;
+    font-weight: 300;
   }
 
   .banner-video {
     width: 100%; /* Take full width */
     margin-right: 0; /* Remove margin */
-    height: 40vh; /* Reduce height */
-    padding: 15px; /* Reduce padding */
+    height: 30vh; /* Reduce height */
+    padding: 8px; /* Reduce padding */
   }
 
   .banner-video iframe {

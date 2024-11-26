@@ -99,7 +99,7 @@
 
   @media (max-width: 400px) {
     .header {
-        flex-direction: column;
+        flex-direction: row;
         padding: 10px 12px;
         height: auto;
         width: 100%;
@@ -120,6 +120,7 @@
 
     .home-link {
         font-size: 1em;
+        visibility: hidden;
     }
 
     .header-button {
@@ -132,6 +133,7 @@
     .search-container {
       position: relative;
       top: 10px;
+      visibility: hidden;
     }
 
     .search-input {

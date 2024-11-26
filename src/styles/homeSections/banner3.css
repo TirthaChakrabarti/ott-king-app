@@ -131,6 +131,7 @@
     display: inline-block;
     height: auto;
     padding: 20px;
+    padding-top: 0;
   }
 
   .banner-three-details,
@@ -150,6 +151,7 @@
 
   .banner-three-logo {
     /* display: none; */
+    top: 47%;
     margin-top: 80px;
     z-index: 0;
   }

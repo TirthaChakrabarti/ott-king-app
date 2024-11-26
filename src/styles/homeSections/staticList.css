@@ -62,6 +62,7 @@
 
 @media (max-width: 400px) {
     .static-cardlist {
+      width: 100%;
       flex-wrap: wrap; /* Allow cards to wrap */
       justify-content: center; /* Center cards */
       gap: 12px; /* Reduce gaps */

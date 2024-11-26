@@ -10,8 +10,10 @@
     padding: 0; /* Remove any padding */
     /* border-top: 3px solid rgb(83, 111, 250);
     border-left: 3px solid rgb(83, 111, 250); */
-    border-top: 3px solid rgb(178, 151, 1);
-    border-left: 3px solid rgb(178, 151, 1);
+    /* border-top: 3px solid rgb(178, 151, 1);
+    border-left: 3px solid rgb(178, 151, 1); */
+    border-top: 3px solid goldenrod;
+    border-left: 3px solid goldenrod;
     border-radius: 20px;
 }
 

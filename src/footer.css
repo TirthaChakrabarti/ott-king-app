@@ -58,58 +58,41 @@
     border-top: 1px solid #333;
     padding-top: 20px;
   }
-  
-  .language-btn {
 
-    background-color: transparent;
-    color: #fff;
-    width: 140px;
-    border: 1px solid white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 1em;
-
-    /* background-color: #333;
-    color: #757575;
-    padding: 8px 16px;
-    border: 1px solid #333;
-    border-radius: 4px;
-    cursor: pointer; */
-  }
-  
   .footer-note {
     color: #757575;
   }
 
-  /* Dropdown */
+@media (max-width: 400px) {
+  .netflix-footer {
+    padding-left: 10px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    font-size: 0.9rem; /* Adjust font size */
+  }
 
-  .dropdown {
-    position: relative; /* This makes the dropdown position absolute relative to this li */
+  .footer-top {
+    margin-left: 10px; /* Reduce left margin */
+    text-align: center; /* Center-align for smaller screens */
+  }
+
+  .footer-links {
+    flex-direction: column; /* Stack links vertically */
+    align-items: flex-start; /* Align to the left */
+    margin-bottom: 10px;
+  }
+
+  .footer-column {
+    width: 100%; /* Make columns take full width */
+    margin-bottom: 10px; /* Add spacing between columns */
+  }
+
+  .footer-bottom {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center;
+    margin-top: 10px;
+  }
 }
 
-#dropdown {
-    position: absolute; /* Position dropdown relative to the parent li */
-    top: 100%; /* Position dropdown below the button */
-    left: 10px;
-    background-color: #fff;
-    color: #000;
-    border-radius: 12px;
-    padding: 5px 0;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    min-width: 120px;
-    z-index: 10;
-    display: block;
-}
-
-#dropdown li {
-    padding: 5px 15px;
-    cursor: pointer;
-    font-size: 0.9em;
-    white-space: nowrap;
-}
-
-#dropdown li:hover {
-    background-color: #1e90ff;
-    color: white;
-}
   

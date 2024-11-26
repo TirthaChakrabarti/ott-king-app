@@ -17,6 +17,7 @@ import HomeBannerOne from "./sections/HomeBannerOne";
 import HomeBannerTwo from "./sections/HomeBannerTwo";
 import HomeBannerThree from "./sections/HomeBannerThree";
 import HomeLogoSlider from "./sections/HomeLogoSlider";
+import { Link } from "react-router-dom";
 
 
 
@@ -47,17 +48,23 @@ const AllHomeSections = () => {
             
             <KidsShowsList/>
 
-            <HomeBannerThree/>
-
             <OTTKingSports/>
+
+            <HomeBannerThree/>
             
-            <p className="ottking-special-caption">OTT King Special</p>
+            <p className="ottking-special-caption" style={{color: 'gold'}}>
+                OTT King Special
+            </p>
             <OTTKingSpecialOne/>
             <OTTKingSpecialTwo/>
 
             {/* Blogs */}
 
             <HomeLogoSlider/>
+
+            <Link to={'/pricing'}>
+                <button className="home-bottom-button">Subscribe</button>
+            </Link>
         </section>
     )
 }

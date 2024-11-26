@@ -153,7 +153,8 @@
     }
 
     .large-small-section {
-        padding: 10px;
+        margin-top: 10px;
+        padding: 12px;
         flex-direction: column; /* Stack all content */
         gap: 10px;
     }
@@ -168,16 +169,24 @@
         /* height: 220px; */
     }
 
+    .large-card-text {
+        position: absolute;
+        top: 80%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: left;
+        padding: 10px;
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        border-radius: 10px;
+    }
+
     .right-large {
         width: 100%; /* Full width for small cards */
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         flex-direction: column;
         gap: 10px;
-    }
-
-    .small-card {
-        /* height: 150px;  */
     }
 
     .small-card-text {
