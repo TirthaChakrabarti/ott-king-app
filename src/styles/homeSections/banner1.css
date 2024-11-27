@@ -129,5 +129,6 @@
   .banner-video iframe {
     height: 100%; /* Make iframe take full container height */
     border-radius: 8px; /* Slightly smaller border radius */
+    object-fit: cover;
   }
 }

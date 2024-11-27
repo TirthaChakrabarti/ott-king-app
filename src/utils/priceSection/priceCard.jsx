@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import '../../styles/home/priceCard.css';
 
@@ -32,8 +33,8 @@ const PriceCard = (
            <div>
                 <LogoSection className="pricecard-logo-section" logoList={smallerLogoList} />
                 <button
-                className="plan-card-show-list-button"
-                onClick={onShowFullList}
+                    className="plan-card-show-list-button"
+                    onClick={onShowFullList}
                 >
                     Show Full List
                 </button>
@@ -42,7 +43,13 @@ const PriceCard = (
             <div>
                 <p id="name">{name}</p>
                 <p id="quality">{price}</p>
-                <button className="plan-card-subscribe-button">Choose Plan</button>
+                <Link to={'/log-in'}>
+                    <button 
+                        className="plan-card-subscribe-button"
+                    >
+                        Choose Plan
+                    </button>
+                </Link>
                 <div className="features-container">
                     <p className="features">{feature1}</p>
                     <p className="features">{feature2}</p>

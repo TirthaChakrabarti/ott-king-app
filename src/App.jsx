@@ -6,6 +6,8 @@ import Homepage from './home/Homepage';
 import PricingSection from './home/PriceSection';
 import MovieDetailsPage from './movieDetails/MovieDetailsPage';
 import Footer from './Footer';
+import LogInPage from './LogInSignUp/LogInPage';
+import SignUpPage from './LogInSignUp/SignUpPage';
 
 // Data list:
 
@@ -390,6 +392,9 @@ function App() {
 
         <Route path="/ott-king-sports/:id" element={<MovieDetailsPage movies={TrendingMoviesList}/>} />
         <Route path="/ott-king-special/:id" element={<MovieDetailsPage movies={TrendingMoviesList}/>} />
+
+        <Route path='/log-in' element={<LogInPage/>} />
+        <Route path='/sign-up' element={<SignUpPage/>} />
       </Routes>
       <Footer/>
     </section>

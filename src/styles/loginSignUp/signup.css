@@ -1,0 +1,240 @@
+/* General styles */
+
+/* Parent container */
+.signup-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 50px;
+    width: 70%;
+    /* padding: 4px 0 0 4px; */
+    padding: 10px;
+    border-radius: 12px;
+    /* background-color: rgb(1, 1, 97); */
+    background: linear-gradient(180deg, #102c5e, #0a1128);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 0 40px rgba(66, 153, 254, 0.8);
+    /* box-shadow: 0 5px 10px rgba(0, 119, 255, 0.9), 0 0 30px rgba(0, 119, 255, 1); */
+    transition: all 0.5s linear;
+}
+
+.signup-parent:hover {
+    box-shadow: 0 5px 10px rgba(0, 119, 255, 0.9), 0 0 30px rgba(0, 119, 255, 1);
+}
+
+/* Login container */
+.signup-container {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 100%;
+    /* max-width: 900px; */
+    top: 20%;
+}
+
+/* Image/Welcome section */
+.signup-image-container {
+    flex: 1;
+    width: 50%;
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    padding: 40px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://media.istockphoto.com/id/478301928/photo/sea.jpg?s=612x612&w=0&k=20&c=w-xqUmBsmhHG01yTldhoLgSSJVlvOCPqqP33NQDdoX0=');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.8);
+}
+
+/* Form section */
+.form-container {
+    display: flex;
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(135deg, #2575fc, #6a11cb); */
+    background: rgb(34, 34, 34);
+    /* gap: 10px; */
+}
+
+.form-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: gold;
+}
+
+.form-container p {
+    font-size: 1rem;
+    /* margin-bottom: 20px; */
+    color: white;
+    opacity: 0.8;
+}
+
+/* Input fields */
+.form-details {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.form-input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.name {
+    width: 90%;
+    height: 36px;
+}
+
+.email {
+    width: 90%;
+    height: 36px;
+}
+
+.statement-container {
+    width: 100%;
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 0;
+}
+  
+.statement-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+/* Buttons */
+
+.verify-button {
+    font-weight: 400;
+    padding: 7px 10px; /* Adjust padding for a more prominent button */
+    font-size: 13px; /* Set font size to be readable */
+    border-radius: 5px; /* Slightly rounded corners */
+    border: none;
+    /* background: linear-gradient(145deg, #4070a2, #01518e); */
+    background: goldenrod;
+    color: white; /* White text */
+    cursor: pointer; /* Pointer on hover */
+    transition: all 0.3s linear; /* Smooth transition for hover effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.verify-button:hover {
+    background: linear-gradient(145deg, #9ab34f, #aeae14); /* Lighter blue gradient on hover */
+    box-shadow: 0 6px 14px rgba(51, 46, 146, 0.3); /* Enhanced shadow */
+    transform: translateY(-2px); /* Lift effect */
+    filter: brightness(1.2); /* Slightly brighten on hover */
+}
+
+.verify-button:active {
+    transform: scale(1.02); /* Press effect */
+}
+
+.form-submit-button {
+    margin-top: 15px;
+    font-weight: 600;
+    padding: 8px 15px; /* Adjust padding for a more prominent button */
+    font-size: 18px; /* Set font size to be readable */
+    border-radius: 5px; /* Slightly rounded corners */
+    border: none;
+    background: linear-gradient(145deg, #4070a2, #01518e); /* Vibrant blue gradient */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer on hover */
+    transition: all 0.3s linear; /* Smooth transition for hover effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.form-submit-button:hover {
+    background: linear-gradient(145deg, #4f84b3, #1461ae); /* Lighter blue gradient on hover */
+    box-shadow: 0 6px 14px rgba(51, 46, 146, 0.3); /* Enhanced shadow */
+    transform: translateY(-3px); /* Lift effect */
+    filter: brightness(1.5); /* Slightly brighten on hover */
+  }
+  
+  .form-submit-button:active {
+    background: linear-gradient(145deg, #0074cc, #005fa3); /* Darker blue gradient when clicked */
+    transform: scale(1.01); /* Press effect */
+  }
+
+/* Responsive design */
+@media (max-width: 400px) {
+    /* Parent container adjustments */
+    .signup-parent {
+        width: 90%;
+        padding-left: 0;
+        padding-right: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 30px rgba(66, 153, 254, 0.6);
+    }
+
+    .signup-parent:hover {
+        box-shadow: 0 4px 10px rgba(0, 119, 255, 0.9), 0 0 25px rgba(0, 119, 255, 1);
+    }
+
+    /* Login container adjustments */
+    .signup-container {
+        /* width: 100%; */
+        flex-direction: column;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Image section adjustments */
+    .signup-image-container {
+        display: none;
+    }
+
+    .form-header {
+        text-align: center;
+    }
+
+    .form-header {
+        margin-top: 10px;
+    }
+
+    .form-input-phone-container {
+        gap: 5px;
+    }
+    
+    .form-input-phone {
+        width: 68%;
+    }
+
+    /* Button adjustments */
+    .verify-button, .form-submit-button {
+        font-size: 14px;
+        padding: 6px 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .verify-button:hover, .form-submit-button:hover {
+        box-shadow: 0 4px 10px rgba(51, 46, 146, 0.3);
+    }
+}
