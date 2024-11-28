@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+
 // import { Button, Nav } from "react-bootstrap";
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 // import PriceSection from "./home/PriceSection";
@@ -50,8 +53,15 @@ const Header = () => {
                 </Link>
 
             </div>
-            <div className="search-container">
-                <input type="text" className="search-input" placeholder="Search..." />
+            <div className="search-and-user">
+                <div className="search-container">
+                    <input type="text" className="search-input" placeholder="Search..." />
+                </div>
+                <div className="user-account">
+                    <Link to={'/user-details'}>
+                        <FontAwesomeIcon icon={faUser} style={{ color: 'gold', fontSize: '1.5rem' }}/>
+                    </Link>
+                </div>
             </div>
         </section>
     )

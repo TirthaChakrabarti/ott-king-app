@@ -8,6 +8,7 @@ import MovieDetailsPage from './movieDetails/MovieDetailsPage';
 import Footer from './Footer';
 import LogInPage from './LogInSignUp/LogInPage';
 import SignUpPage from './LogInSignUp/SignUpPage';
+import UserAccountPage from './userAccount/UserAccountPage';
 
 // Data list:
 
@@ -381,6 +382,9 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Homepage />} />
         <Route path="/pricing" element={<PricingSection />} />
+
+        <Route path='/user-details' element={<UserAccountPage/>}/>
+
         <Route path="/trending-movies/:id" element={<MovieDetailsPage movies={TrendingMoviesList}/>} />
         <Route path="/newly-released-movies/:id" element={<MovieDetailsPage movies={NewlyReleasedMoviesList}/>} />
         <Route path="/trending-tv-shows/:id" element={<MovieDetailsPage movies={TrendingMoviesList}/>} />

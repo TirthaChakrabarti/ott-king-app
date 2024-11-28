@@ -1,0 +1,139 @@
+.account-details-parent {
+    width: 65%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.custom-accordion {
+    margin-top: 20px;
+  }
+  
+  .custom-accordion-item {
+    border: none !important;
+    /* border-radius: 15px; */
+  }
+  
+  .custom-accordion-header {
+    color: white;
+    font-weight: 300;
+    background: rgb(168, 168, 193);
+  }
+  
+  /* .custom-accordion-header::after {
+    color: lightgray; 
+  } */
+  
+  .custom-accordion-body {
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-bottom: 20px;
+    background: rgb(70, 70, 100);
+  }
+
+  .account-details-subsections {
+    margin-bottom: 5px;
+  }
+  
+  .account-details-subsections div {
+    margin-bottom: 4px;
+  }
+
+  .personal-details, .delete-account, .signout {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .account-details-subsections h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+  
+  .account-details-subsections p {
+    color: lightgray;
+    font-size: 0.9rem;
+  }
+
+
+  #edit, #delete, #signout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gold;
+  }
+
+.subscription {
+    margin-top: 20px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.9;
+}
+
+.subscription-header {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    color: white;
+    font-weight: 300;
+    background: rgb(168, 168, 193);
+}
+
+.subscription-details {
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-bottom: 20px;
+    background: rgb(70, 70, 100);
+}
+
+#plan-name {
+    font-size: 1.1rem;
+    color: white;
+    margin-top: 12px;
+    margin-bottom: 18px;
+}
+
+#current-plan {
+    color: lightgray;
+    font-style: italic;
+}
+
+#plan-price {
+    color: lightgray;
+    margin-bottom: 0;
+}
+
+#plan-expiry {
+    color: white;
+}
+
+.subscription-history {
+    border-top: 1px solid rgb(25, 25, 67);
+    background: rgb(70, 70, 100);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: lightgray;
+    font-weight: 1.5rem;
+    font-weight: 500;
+    text-align: end;
+}
+
+@media (max-width: 400px) {
+
+    .account-details-parent {
+      width: 95%;
+    }
+
+    .custom-accordion-body {
+      padding-top: 5px;
+      padding-left: 5px;
+      padding-bottom: 5px;
+    }
+}
+

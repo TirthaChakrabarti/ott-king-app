@@ -42,8 +42,8 @@ const LogoSlider = () => {
       {
         breakpoint: 480, // For smaller devices
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 5,
+          slidesToScroll: 2,
         },
       },
     ],

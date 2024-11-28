@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import '../styles/home/Homepage.css';
 
@@ -17,7 +18,6 @@ import HomeBannerOne from "./sections/HomeBannerOne";
 import HomeBannerTwo from "./sections/HomeBannerTwo";
 import HomeBannerThree from "./sections/HomeBannerThree";
 import HomeLogoSlider from "./sections/HomeLogoSlider";
-import { Link } from "react-router-dom";
 
 
 

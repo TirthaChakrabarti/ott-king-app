@@ -114,6 +114,11 @@
         margin: 10px auto; /* Center align with reduced margin */
     }
 
+    .plan-card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 6px rgba(0, 119, 255, 0.9), 0 0 25px rgba(0, 119, 255, 1);
+    }
+
     .plan-card #name {
         font-size: 1.5rem; /* Slightly smaller font size for name */
     }

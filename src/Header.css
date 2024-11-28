@@ -70,6 +70,13 @@
     background: linear-gradient(145deg, #0074cc, #005fa3); /* Darker blue gradient when clicked */
     transform: scale(1.01); /* Press effect */
   }
+
+  .search-and-user {
+    display: flex;
+    align-items: end;
+    /* gap: 50px; */
+    /* margin-left: 50px; */
+  }
   
   .search-container {
     position: relative;
@@ -96,6 +103,19 @@
   .search-input::placeholder {
     color: darkgray;
   } 
+
+  .user-account {
+    border: 1px solid gold;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
 
   @media (max-width: 400px) {
     .header {
