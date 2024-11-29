@@ -18,6 +18,8 @@ import HomeBannerOne from "./sections/HomeBannerOne";
 import HomeBannerTwo from "./sections/HomeBannerTwo";
 import HomeBannerThree from "./sections/HomeBannerThree";
 import HomeLogoSlider from "./sections/HomeLogoSlider";
+import MovieSlider from "../utils/movieSliderList/MovieSliderListTwo";
+import { TrendingTVShowsList } from "../data";
 
 
 
@@ -30,7 +32,7 @@ const AllHomeSections = () => {
             <NewlyReleasedMoviesList/>
             <HomeBannerOne />
             <DealOfTheWeek/>
-            <TrendingTVShows/> 
+            <MovieSlider title="Trending TV Shows" movies={TrendingTVShowsList} />
             <HomeBannerTwo/>
             <TopWebSeriesList/>
             <OTTKingMovieList/>

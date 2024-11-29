@@ -1,213 +1,227 @@
-import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
 
-import Header from './globalHeaderFooter/Header';
-import Footer from './globalHeaderFooter/Footer';
-import Homepage from './home/Homepage';
-import PricingSection from './home/PriceSection';
-import MovieDetailsPage from './movieDetails/MovieDetailsPage';
-import LogInPage from './LogInSignUp/LogInPage';
-import SignUpPage from './LogInSignUp/SignUpPage';
-import UserAccountPage from './userAccount/UserAccountPage';
+import Header from "./globalHeaderFooter/Header";
+import Footer from "./globalHeaderFooter/Footer";
+import Homepage from "./home/Homepage";
+import PricingSection from "./home/PriceSection";
+import MovieDetailsPage from "./movieDetails/MovieDetailsPage";
+import LogInPage from "./LogInSignUp/LogInPage";
+import SignUpPage from "./LogInSignUp/SignUpPage";
+import UserAccountPage from "./userAccount/UserAccountPage";
+import TransactionHistory from "./userAccount/TransactionHistory";
+import EditDetais from "./userAccount/EditDetais";
+
 
 // Data list:
 
 const TrendingMoviesList = [
   {
-      id: 0,
-      title: "Movie 1",
-      year: "2023",
-      storyline: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.",
-      releaseDate: "2023-01-01",
-      genres: ["Action", "Thriller"],
-      actors: ["Actor A", "Actor B"],
-      imdbRating: 8.5,
-      averageRating: 4.5,
-      poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg"
+    id: 0,
+    title: "Movie 1",
+    year: "2023",
+    storyline:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.",
+    releaseDate: "2023-01-01",
+    genres: ["Action", "Thriller"],
+    actors: ["Actor A", "Actor B"],
+    imdbRating: 8.5,
+    averageRating: 4.5,
+    poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
   },
   {
-      id: 1,
-      title: "Movie 2",
-      year: "2021",
-      storyline: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.",
-      releaseDate: "2021-05-15",
-      genres: ["Comedy", "Drama"],
-      actors: ["Actor X", "Actor Y"],
-      imdbRating: 7.3,
-      averageRating: 4.0,
-      poster: "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg"
+    id: 1,
+    title: "Movie 2",
+    year: "2021",
+    storyline:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.",
+    releaseDate: "2021-05-15",
+    genres: ["Comedy", "Drama"],
+    actors: ["Actor X", "Actor Y"],
+    imdbRating: 7.3,
+    averageRating: 4.0,
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg",
   },
   {
-      id: 2,
-      title: "Movie 1",
-      year: "2023",
-      storyline: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.",
-      releaseDate: "2023-01-01",
-      genres: ["Action", "Thriller"],
-      actors: ["Actor A", "Actor B"],
-      imdbRating: 8.5,
-      averageRating: 4.5,
-      poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg"
+    id: 2,
+    title: "Movie 1",
+    year: "2023",
+    storyline:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quo id excepturi similique veritatis quisquam at consequatur atque illo dolore optio, nesciunt nulla quam quidem. Dolor delectus illo est itaque.",
+    releaseDate: "2023-01-01",
+    genres: ["Action", "Thriller"],
+    actors: ["Actor A", "Actor B"],
+    imdbRating: 8.5,
+    averageRating: 4.5,
+    poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
   },
   {
-      id: 3,
-      title: "Movie 2",
-      year: "2021",
-      storyline: "This is the storyline for Movie 2.",
-      releaseDate: "2021-05-15",
-      genres: ["Comedy", "Drama"],
-      actors: ["Actor X", "Actor Y"],
-      imdbRating: 7.3,
-      averageRating: 4.0,
-      poster: "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg"
+    id: 3,
+    title: "Movie 2",
+    year: "2021",
+    storyline: "This is the storyline for Movie 2.",
+    releaseDate: "2021-05-15",
+    genres: ["Comedy", "Drama"],
+    actors: ["Actor X", "Actor Y"],
+    imdbRating: 7.3,
+    averageRating: 4.0,
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg",
   },
   {
-      id: 4,
-      title: "Movie 1",
-      year: "2023",
-      storyline: "This is the storyline for Movie 1.",
-      releaseDate: "2023-01-01",
-      genres: ["Action", "Thriller"],
-      actors: ["Actor A", "Actor B"],
-      imdbRating: 8.5,
-      averageRating: 4.5,
-      poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg"
+    id: 4,
+    title: "Movie 1",
+    year: "2023",
+    storyline: "This is the storyline for Movie 1.",
+    releaseDate: "2023-01-01",
+    genres: ["Action", "Thriller"],
+    actors: ["Actor A", "Actor B"],
+    imdbRating: 8.5,
+    averageRating: 4.5,
+    poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
   },
   {
-      id: 5,
-      title: "Movie 2",
-      year: "2021",
-      storyline: "This is the storyline for Movie 2.",
-      releaseDate: "2021-05-15",
-      genres: ["Comedy", "Drama"],
-      actors: ["Actor X", "Actor Y"],
-      imdbRating: 7.3,
-      averageRating: 4.0,
-      poster: "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg"
+    id: 5,
+    title: "Movie 2",
+    year: "2021",
+    storyline: "This is the storyline for Movie 2.",
+    releaseDate: "2021-05-15",
+    genres: ["Comedy", "Drama"],
+    actors: ["Actor X", "Actor Y"],
+    imdbRating: 7.3,
+    averageRating: 4.0,
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg",
   },
   {
-      id: 6,
-      title: "Movie 1",
-      year: "2023",
-      storyline: "This is the storyline for Movie 1.",
-      releaseDate: "2023-01-01",
-      genres: ["Action", "Thriller"],
-      actors: ["Actor A", "Actor B"],
-      imdbRating: 8.5,
-      averageRating: 4.5,
-      poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg"
+    id: 6,
+    title: "Movie 1",
+    year: "2023",
+    storyline: "This is the storyline for Movie 1.",
+    releaseDate: "2023-01-01",
+    genres: ["Action", "Thriller"],
+    actors: ["Actor A", "Actor B"],
+    imdbRating: 8.5,
+    averageRating: 4.5,
+    poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
   },
   {
-      id: 7,
-      title: "Movie 2",
-      year: "2021",
-      storyline: "This is the storyline for Movie 2.",
-      releaseDate: "2021-05-15",
-      genres: ["Comedy", "Drama"],
-      actors: ["Actor X", "Actor Y"],
-      imdbRating: 7.3,
-      averageRating: 4.0,
-      poster: "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg"
-  }
-]
+    id: 7,
+    title: "Movie 2",
+    year: "2021",
+    storyline: "This is the storyline for Movie 2.",
+    releaseDate: "2021-05-15",
+    genres: ["Comedy", "Drama"],
+    actors: ["Actor X", "Actor Y"],
+    imdbRating: 7.3,
+    averageRating: 4.0,
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg",
+  },
+];
 
 const NewlyReleasedMoviesList = [
   {
-      id: 0,
-      title: "Movie 1",
-      year: "2023",
-      storyline: "This is the storyline for Movie 1.",
-      releaseDate: "2023-01-01",
-      genres: ["Action", "Thriller"],
-      actors: ["Actor A", "Actor B"],
-      imdbRating: 8.5,
-      averageRating: 4.5,
-      poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg"
+    id: 0,
+    title: "Movie 1",
+    year: "2023",
+    storyline: "This is the storyline for Movie 1.",
+    releaseDate: "2023-01-01",
+    genres: ["Action", "Thriller"],
+    actors: ["Actor A", "Actor B"],
+    imdbRating: 8.5,
+    averageRating: 4.5,
+    poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
   },
   {
-      id: 1,
-      title: "Movie 2",
-      year: "2021",
-      storyline: "This is the storyline for Movie 2.",
-      releaseDate: "2021-05-15",
-      genres: ["Comedy", "Drama"],
-      actors: ["Actor X", "Actor Y"],
-      imdbRating: 7.3,
-      averageRating: 4.0,
-      poster: "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg"
+    id: 1,
+    title: "Movie 2",
+    year: "2021",
+    storyline: "This is the storyline for Movie 2.",
+    releaseDate: "2021-05-15",
+    genres: ["Comedy", "Drama"],
+    actors: ["Actor X", "Actor Y"],
+    imdbRating: 7.3,
+    averageRating: 4.0,
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg",
   },
   {
-      id: 2,
-      title: "Movie 1",
-      year: "2023",
-      storyline: "This is the storyline for Movie 1.",
-      releaseDate: "2023-01-01",
-      genres: ["Action", "Thriller"],
-      actors: ["Actor A", "Actor B"],
-      imdbRating: 8.5,
-      averageRating: 4.5,
-      poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg"
+    id: 2,
+    title: "Movie 1",
+    year: "2023",
+    storyline: "This is the storyline for Movie 1.",
+    releaseDate: "2023-01-01",
+    genres: ["Action", "Thriller"],
+    actors: ["Actor A", "Actor B"],
+    imdbRating: 8.5,
+    averageRating: 4.5,
+    poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
   },
   {
-      id: 3,
-      title: "Movie 2",
-      year: "2021",
-      storyline: "This is the storyline for Movie 2.",
-      releaseDate: "2021-05-15",
-      genres: ["Comedy", "Drama"],
-      actors: ["Actor X", "Actor Y"],
-      imdbRating: 7.3,
-      averageRating: 4.0,
-      poster: "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg"
+    id: 3,
+    title: "Movie 2",
+    year: "2021",
+    storyline: "This is the storyline for Movie 2.",
+    releaseDate: "2021-05-15",
+    genres: ["Comedy", "Drama"],
+    actors: ["Actor X", "Actor Y"],
+    imdbRating: 7.3,
+    averageRating: 4.0,
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg",
   },
   {
-      id: 4,
-      title: "Movie 1",
-      year: "2023",
-      storyline: "This is the storyline for Movie 1.",
-      releaseDate: "2023-01-01",
-      genres: ["Action", "Thriller"],
-      actors: ["Actor A", "Actor B"],
-      imdbRating: 8.5,
-      averageRating: 4.5,
-      poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg"
+    id: 4,
+    title: "Movie 1",
+    year: "2023",
+    storyline: "This is the storyline for Movie 1.",
+    releaseDate: "2023-01-01",
+    genres: ["Action", "Thriller"],
+    actors: ["Actor A", "Actor B"],
+    imdbRating: 8.5,
+    averageRating: 4.5,
+    poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
   },
   {
-      id: 5,
-      title: "Movie 2",
-      year: "2021",
-      storyline: "This is the storyline for Movie 2.",
-      releaseDate: "2021-05-15",
-      genres: ["Comedy", "Drama"],
-      actors: ["Actor X", "Actor Y"],
-      imdbRating: 7.3,
-      averageRating: 4.0,
-      poster: "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg"
+    id: 5,
+    title: "Movie 2",
+    year: "2021",
+    storyline: "This is the storyline for Movie 2.",
+    releaseDate: "2021-05-15",
+    genres: ["Comedy", "Drama"],
+    actors: ["Actor X", "Actor Y"],
+    imdbRating: 7.3,
+    averageRating: 4.0,
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg",
   },
   {
-      id: 6,
-      title: "Movie 1",
-      year: "2023",
-      storyline: "This is the storyline for Movie 1.",
-      releaseDate: "2023-01-01",
-      genres: ["Action", "Thriller"],
-      actors: ["Actor A", "Actor B"],
-      imdbRating: 8.5,
-      averageRating: 4.5,
-      poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg"
+    id: 6,
+    title: "Movie 1",
+    year: "2023",
+    storyline: "This is the storyline for Movie 1.",
+    releaseDate: "2023-01-01",
+    genres: ["Action", "Thriller"],
+    actors: ["Actor A", "Actor B"],
+    imdbRating: 8.5,
+    averageRating: 4.5,
+    poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
   },
   {
-      id: 7,
-      title: "Movie 2",
-      year: "2021",
-      storyline: "This is the storyline for Movie 2.",
-      releaseDate: "2021-05-15",
-      genres: ["Comedy", "Drama"],
-      actors: ["Actor X", "Actor Y"],
-      imdbRating: 7.3,
-      averageRating: 4.0,
-      poster: "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg"
-  }
+    id: 7,
+    title: "Movie 2",
+    year: "2021",
+    storyline: "This is the storyline for Movie 2.",
+    releaseDate: "2021-05-15",
+    genres: ["Comedy", "Drama"],
+    actors: ["Actor X", "Actor Y"],
+    imdbRating: 7.3,
+    averageRating: 4.0,
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg",
+  },
 ];
 
 const DealOfTheWeek = [
@@ -221,7 +235,8 @@ const DealOfTheWeek = [
     actors: ["Brand A", "Brand B"],
     imdbRating: 9.2,
     averageRating: 4.8,
-    poster: "https://hdwallpaperim.com/wp-content/uploads/2017/08/25/123982-night-urban.jpg"
+    poster:
+      "https://hdwallpaperim.com/wp-content/uploads/2017/08/25/123982-night-urban.jpg",
   },
   {
     id: 1,
@@ -233,7 +248,8 @@ const DealOfTheWeek = [
     actors: ["Brand X", "Brand Y"],
     imdbRating: 8.5,
     averageRating: 4.6,
-    poster: "https://wallpaper.forfun.com/fetch/19/19b7a7201a24d6d3934b5da031c38307.jpeg"
+    poster:
+      "https://wallpaper.forfun.com/fetch/19/19b7a7201a24d6d3934b5da031c38307.jpeg",
   },
   {
     id: 2,
@@ -245,7 +261,8 @@ const DealOfTheWeek = [
     actors: ["Brand C", "Brand D"],
     imdbRating: 8.9,
     averageRating: 4.7,
-    poster: "https://cdn.pixabay.com/photo/2024/01/02/14/58/leaf-8483401_640.jpg"
+    poster:
+      "https://cdn.pixabay.com/photo/2024/01/02/14/58/leaf-8483401_640.jpg",
   },
   {
     id: 3,
@@ -257,7 +274,8 @@ const DealOfTheWeek = [
     actors: ["Brand E", "Brand F"],
     imdbRating: 9.0,
     averageRating: 4.9,
-    poster: "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D"
+    poster:
+      "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 4,
@@ -269,7 +287,8 @@ const DealOfTheWeek = [
     actors: ["Brand G", "Brand H"],
     imdbRating: 8.2,
     averageRating: 4.5,
-    poster: "https://e0.pxfuel.com/wallpapers/240/1/desktop-wallpaper-cinematic-cool-cinematic.jpg"
+    poster:
+      "https://e0.pxfuel.com/wallpapers/240/1/desktop-wallpaper-cinematic-cool-cinematic.jpg",
   },
   {
     id: 5,
@@ -281,7 +300,8 @@ const DealOfTheWeek = [
     actors: ["Brand I", "Brand J"],
     imdbRating: 8.4,
     averageRating: 4.3,
-    poster: "https://e0.pxfuel.com/wallpapers/149/40/desktop-wallpaper-preview-cliffs-destruction-city-landscape-waterfall.jpg"
+    poster:
+      "https://e0.pxfuel.com/wallpapers/149/40/desktop-wallpaper-preview-cliffs-destruction-city-landscape-waterfall.jpg",
   },
   {
     id: 6,
@@ -293,8 +313,8 @@ const DealOfTheWeek = [
     actors: ["Brand K", "Brand L"],
     imdbRating: 8.6,
     averageRating: 4.4,
-    poster: "https://via.placeholder.com/150"
-  }
+    poster: "https://via.placeholder.com/150",
+  },
 ];
 
 const TopWebSeriesList = [
@@ -308,7 +328,8 @@ const TopWebSeriesList = [
     actors: ["Actor A", "Actor B"],
     imdbRating: 8.9,
     averageRating: 4.8,
-    poster: "https://wallpaper.forfun.com/fetch/19/19b7a7201a24d6d3934b5da031c38307.jpeg"
+    poster:
+      "https://wallpaper.forfun.com/fetch/19/19b7a7201a24d6d3934b5da031c38307.jpeg",
   },
   {
     id: 1,
@@ -320,7 +341,8 @@ const TopWebSeriesList = [
     actors: ["Actor C", "Actor D"],
     imdbRating: 7.5,
     averageRating: 4.3,
-    poster: "https://cdn.pixabay.com/photo/2024/01/02/14/58/leaf-8483401_640.jpg"
+    poster:
+      "https://cdn.pixabay.com/photo/2024/01/02/14/58/leaf-8483401_640.jpg",
   },
   {
     id: 2,
@@ -332,7 +354,8 @@ const TopWebSeriesList = [
     actors: ["Actor E", "Actor F"],
     imdbRating: 8.1,
     averageRating: 4.6,
-    poster: "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D"
+    poster:
+      "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 3,
@@ -344,7 +367,8 @@ const TopWebSeriesList = [
     actors: ["Actor G", "Actor H"],
     imdbRating: 9.0,
     averageRating: 4.9,
-    poster: "https://e0.pxfuel.com/wallpapers/240/1/desktop-wallpaper-cinematic-cool-cinematic.jpg"
+    poster:
+      "https://e0.pxfuel.com/wallpapers/240/1/desktop-wallpaper-cinematic-cool-cinematic.jpg",
   },
   {
     id: 4,
@@ -356,7 +380,8 @@ const TopWebSeriesList = [
     actors: ["Actor I", "Actor J"],
     imdbRating: 8.4,
     averageRating: 4.5,
-    poster: "https://e0.pxfuel.com/wallpapers/149/40/desktop-wallpaper-preview-cliffs-destruction-city-landscape-waterfall.jpg"
+    poster:
+      "https://e0.pxfuel.com/wallpapers/149/40/desktop-wallpaper-preview-cliffs-destruction-city-landscape-waterfall.jpg",
   },
   {
     id: 5,
@@ -368,37 +393,64 @@ const TopWebSeriesList = [
     actors: ["Actor K", "Actor L"],
     imdbRating: 7.8,
     averageRating: 4.2,
-    poster: "https://wallpapercave.com/wp/wp3704357.jpg"
-  }
+    poster: "https://wallpapercave.com/wp/wp3704357.jpg",
+  },
 ];
-
-  
-  
 
 function App() {
   return (
-    <section className='main'>
-      <Header/>
+    <section className="main">
+      <Header />
       <Routes>
         <Route exact path="/" element={<Homepage />} />
         <Route path="/pricing" element={<PricingSection />} />
 
-        <Route path='/user-details' element={<UserAccountPage/>}/>
+        <Route path="/user-details" element={<UserAccountPage />} />
 
-        <Route path="/trending-movies/:id" element={<MovieDetailsPage movies={TrendingMoviesList}/>} />
-        <Route path="/newly-released-movies/:id" element={<MovieDetailsPage movies={NewlyReleasedMoviesList}/>} />
-        <Route path="/trending-tv-shows/:id" element={<MovieDetailsPage movies={TrendingMoviesList}/>} />
-        <Route path="/ott-king-movies/:id" element={<MovieDetailsPage movies={TrendingMoviesList}/>} />
-        <Route path="/kids-shows/:id" element={<MovieDetailsPage movies={TrendingMoviesList}/>} />
-        <Route path='/deal-of-the-week/:id' element={<MovieDetailsPage movies={DealOfTheWeek}/>} />
-        <Route path="/top-web-series/:id" element={<MovieDetailsPage movies={TopWebSeriesList}/>} />
-        <Route path="/ott-king-sports/:id" element={<MovieDetailsPage movies={TrendingMoviesList}/>} />
-        <Route path="/ott-king-special/:id" element={<MovieDetailsPage movies={TrendingMoviesList}/>} />
+        <Route
+          path="/trending-movies/:id"
+          element={<MovieDetailsPage movies={TrendingMoviesList} />}
+        />
+        <Route
+          path="/newly-released-movies/:id"
+          element={<MovieDetailsPage movies={NewlyReleasedMoviesList} />}
+        />
+        <Route
+          path="/trending-tv-shows/:id"
+          element={<MovieDetailsPage movies={TrendingMoviesList} />}
+        />
+        <Route
+          path="/ott-king-movies/:id"
+          element={<MovieDetailsPage movies={TrendingMoviesList} />}
+        />
+        <Route
+          path="/kids-shows/:id"
+          element={<MovieDetailsPage movies={TrendingMoviesList} />}
+        />
+        <Route
+          path="/deal-of-the-week/:id"
+          element={<MovieDetailsPage movies={DealOfTheWeek} />}
+        />
+        <Route
+          path="/top-web-series/:id"
+          element={<MovieDetailsPage movies={TopWebSeriesList} />}
+        />
+        <Route
+          path="/ott-king-sports/:id"
+          element={<MovieDetailsPage movies={TrendingMoviesList} />}
+        />
+        <Route
+          path="/ott-king-special/:id"
+          element={<MovieDetailsPage movies={TrendingMoviesList} />}
+        />
 
-        <Route path='/log-in' element={<LogInPage/>} />
-        <Route path='/sign-up' element={<SignUpPage/>} />
+        <Route path="/log-in" element={<LogInPage />} />
+        <Route path="/sign-up" element={<SignUpPage />} />
+        <Route path="/transaction-history" element={<TransactionHistory />} />
+        <Route path="/edit-details" element={<EditDetais />} />
+
       </Routes>
-      <Footer/>
+      <Footer />
     </section>
   );
 }

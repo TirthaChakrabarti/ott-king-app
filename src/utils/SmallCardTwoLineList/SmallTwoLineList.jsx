@@ -5,12 +5,12 @@ import SmallCards from "./SmallCards";
 import '../../styles/homeSections/smallTwoLinesSection.css';
 import { Link } from "react-router-dom";
 
-const SmallTwoLineList = ({ Heading = 'Heading', argeCardData, smallCardData = [] }) => {
+const SmallTwoLineList = ({ smallCardData = [] }) => {
 
     return (
         <section className="smallTwoLinesCardsection-parent">
             <div>
-                <p className="smallTwolinesCardSection-heading">{Heading}</p>
+                <p className="smallTwolinesCardSection-heading">Top Web Series</p>
             </div>
             <div className="smallTwolinesCardSection">
                 {smallCardData.map((card, index) => (

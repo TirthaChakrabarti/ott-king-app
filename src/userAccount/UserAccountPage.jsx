@@ -2,6 +2,7 @@ import React from 'react'
 import { Accordion } from 'react-bootstrap'
 
 import '../styles/userAccount/userAccount.css'
+import { Link } from 'react-router-dom'
 
 const UserAccountPage = () => {
   return (
@@ -49,7 +50,11 @@ const UserAccountPage = () => {
                 <p id='plan-price'>Rs. 117/month</p>
                 <p id='plan-expiry'>Expires on 30/11/2024</p>
             </div>
-            <div className="subscription-history">Subscription History</div>
+            <Link to={'/transaction-history'}>
+                <div className="subscription-history">
+                    <button className='subscription-history-button'>Subscription History</button>
+                </div>
+            </Link>
         </div>
 
         {/* <div className='account-details-section'>

@@ -19,7 +19,7 @@ const TopWebSeries = () => {
 
     return (
         <div>
-            <SmallTwoLineList Heading="Top Web Series" smallCardData={TopWebSeriesList} />
+            <SmallTwoLineList smallCardData={TopWebSeriesList} />
         </div>
     );
 };
