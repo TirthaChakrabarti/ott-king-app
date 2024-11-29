@@ -25,40 +25,22 @@ const AllHomeSections = () => {
     return (
         <section className="sections">
             <Animation/>
-            {/* <LogosSection/> */}
-            {/* <HomeMovingLogoSection/> */}
-            {/* <LogoMarquee/> */}
-
             <HomeLogoSlider/>
-
             <TrendingMovieList/>
             <NewlyReleasedMoviesList/>
-
             <HomeBannerOne />
-
             <DealOfTheWeek/>
-
             <TrendingTVShows/> 
-
             <HomeBannerTwo/>
-
             <TopWebSeriesList/>
-
             <OTTKingMovieList/>
-            
             <KidsShowsList/>
-
             <OTTKingSports/>
-
             <HomeBannerThree/>
             
-            <p className="ottking-special-caption" style={{color: 'gold'}}>
-                OTT King Special
-            </p>
+            <p className="ottking-special-caption" style={{color: 'gold'}}>OTT King Special</p>
             <OTTKingSpecialOne/>
             <OTTKingSpecialTwo/>
-
-            {/* Blogs */}
 
             <HomeLogoSlider/>
 

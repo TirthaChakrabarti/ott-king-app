@@ -1,11 +1,11 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
-import Header from './Header';
+import Header from './globalHeaderFooter/Header';
+import Footer from './globalHeaderFooter/Footer';
 import Homepage from './home/Homepage';
 import PricingSection from './home/PriceSection';
 import MovieDetailsPage from './movieDetails/MovieDetailsPage';
-import Footer from './Footer';
 import LogInPage from './LogInSignUp/LogInPage';
 import SignUpPage from './LogInSignUp/SignUpPage';
 import UserAccountPage from './userAccount/UserAccountPage';
@@ -390,10 +390,8 @@ function App() {
         <Route path="/trending-tv-shows/:id" element={<MovieDetailsPage movies={TrendingMoviesList}/>} />
         <Route path="/ott-king-movies/:id" element={<MovieDetailsPage movies={TrendingMoviesList}/>} />
         <Route path="/kids-shows/:id" element={<MovieDetailsPage movies={TrendingMoviesList}/>} />
-
         <Route path='/deal-of-the-week/:id' element={<MovieDetailsPage movies={DealOfTheWeek}/>} />
         <Route path="/top-web-series/:id" element={<MovieDetailsPage movies={TopWebSeriesList}/>} />
-
         <Route path="/ott-king-sports/:id" element={<MovieDetailsPage movies={TrendingMoviesList}/>} />
         <Route path="/ott-king-special/:id" element={<MovieDetailsPage movies={TrendingMoviesList}/>} />
 
