@@ -16,10 +16,22 @@ const TrendingMoviesList = [
 ];
 
 
-const MovieDetailsPage = ({ movies = [] }) => {
+const MovieDetailsPage = ({ movies = [], allMoviesByCategory = {} }) => {
+
   const { id } = useParams();
   const movie = movies.find((movie) => movie.id === parseInt(id));
   const location = useLocation();
+  const { category } = location.state || {};
+  // const similarMovies = allMoviesByCategory[category] || [];
+
+  // Store original movie list and indices
+  const allMovies = movies;
+
+  // Create an array of movie IDs to skip
+  const skippedMovieId = parseInt(id);
+
+  // Filter out the skipped movie during rendering (but keep original array intact)
+  const reIndexedMovies = allMovies.filter((movie) => movie.id !== skippedMovieId);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -195,7 +207,7 @@ const MovieDetailsPage = ({ movies = [] }) => {
 
       {/* Movies of similar category */}
       <div style={{ marginTop: '4rem' }}>
-          <MovieSlider title="Movies of Similar Category" movies={TrendingMoviesList} />
+          <MovieSlider title="Movies of Similar Category" category={category} movies={reIndexedMovies} />
       </div>
       
       {/* Logo slider  */}

@@ -1,8 +1,8 @@
 .account-details-parent {
     width: 65%;
     height: auto;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    /* margin-top: 20px; */
+    /* margin-bottom: 30px; */
 }
 
 .custom-accordion {
@@ -16,7 +16,7 @@
   
   .custom-accordion-header {
     color: white;
-    font-weight: 300;
+    font-weight: 500;
     background: rgb(168, 168, 193);
   }
   
@@ -142,6 +142,19 @@
 
 .subscription-history-button:hover {
     transform: scale(1.05);
+}
+
+a {
+  /* width: 100%; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  text-decoration: none !important;
+  color: inherit; /* Optional: Keeps the text color consistent */
+}
+
+#edit {
+  margin-top: 20px;
 }
 
 @media (max-width: 400px) {

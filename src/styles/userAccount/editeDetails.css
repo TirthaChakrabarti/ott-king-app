@@ -1,0 +1,138 @@
+.edit-details-parent {
+    width: 55%;
+    height: auto;
+    /* padding: 20px; */
+    background: rgb(70, 70, 100);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none !important;
+    margin-bottom: 30px;
+  }
+  
+  .edit-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: white;
+    background: rgb(168, 168, 193);
+  }
+  
+  .edit-name, .edit-age-phone {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* justify-content: space-between; */
+    gap: 8px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .edit-name input,
+  .edit-age-phone input {
+    /* width: 95%; */
+    padding: 10px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    outline: none;
+    transition: all 0.3s;
+  }
+  
+  input::placeholder {
+    color: lightgray;
+    opacity: 0.5;
+    font-size: 0.9rem;
+  }
+  
+  input:focus {
+    border: 1px solid #3498db;
+  }
+  
+  .edit-gender {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    margin: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.edit-gender label {
+    margin-right: 10px;
+    font-size: 0.95rem;
+    color: lightgray;
+}
+
+.edit-gender input[type="radio"] {
+    margin-left: 10px;
+    margin-right: 5px;
+    accent-color: #3498db; /* Custom color for radio buttons */
+}
+
+.edit-gender input[type="radio"]:hover {
+    transform: scale(1.1);
+}
+
+  
+  .edit-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0 20px 0;
+    height: auto;
+  }
+  
+  .edit-submit-button {
+    width: 80px;
+    height: 40px;
+    color: gold;
+    text-decoration: none;
+    border: 1px solid gold;
+    border-radius: 5px;
+    background: transparent;
+    transition: all 0.3s linear;
+}
+
+.edit-submit-button:hover {
+    transform: scale(1.1);
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(193, 182, 19, 0.6);
+}
+  
+@media (max-width: 480px) {
+    .edit-details-parent {
+      width: 95%;
+      margin-top: 20px;
+      padding: 10px;
+    }
+  
+    .edit-header {
+      font-size: 1rem;
+    }
+  
+    .edit-name, .edit-age-phone {
+      display: flex;
+      flex-direction: column;
+      margin: 5px;
+      gap: 5px;
+    }
+  
+    .edit-gender {
+      font-size: 0.9rem;
+    }
+  
+    .edit-submit-button {
+      width: 90px;
+      height: 40px;
+      font-size: 0.9rem;
+    }
+  }

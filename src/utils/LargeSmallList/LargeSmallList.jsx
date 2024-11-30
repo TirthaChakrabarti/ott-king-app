@@ -20,7 +20,7 @@ const LargeSmallSection = ({
       <div className="large-small-section">
         <div className="left-large">
           {largeCardData.map((card, index) => (
-            <Link to={`/deal-of-the-week/{${index}}`}>
+            <Link to={`/deal-of-the-week/${index}`}>
               <LargeLeftCard
                 key={index}
                 image={card.image}
@@ -32,7 +32,7 @@ const LargeSmallSection = ({
         </div>
         <div className="right-large">
           {smallCardData.map((card, index) => (
-            <Link to={`/deal-of-the-week/{${index}}`}>
+            <Link to={`/deal-of-the-week/${index}`}>
               <SmallRightCards
                 key={index}
                 image={card.image}

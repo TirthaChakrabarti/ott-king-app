@@ -27,7 +27,7 @@ const TrendingMoviesList = [
     actors: ["Actor A", "Actor B"],
     imdbRating: 8.5,
     averageRating: 4.5,
-    poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
+    poster: "https://www.ottking.info/wp-content/uploads/2024/09/disco-p-1.jpg",
   },
   {
     id: 1,
@@ -54,7 +54,7 @@ const TrendingMoviesList = [
     actors: ["Actor A", "Actor B"],
     imdbRating: 8.5,
     averageRating: 4.5,
-    poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
+    poster: "https://www.ottking.info/wp-content/uploads/2024/09/agent.jpg",
   },
   {
     id: 3,
@@ -67,7 +67,7 @@ const TrendingMoviesList = [
     imdbRating: 7.3,
     averageRating: 4.0,
     poster:
-      "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg",
+      "https://www.ottking.info/wp-content/uploads/2024/09/HOI.jpg",
   },
   {
     id: 4,
@@ -79,7 +79,7 @@ const TrendingMoviesList = [
     actors: ["Actor A", "Actor B"],
     imdbRating: 8.5,
     averageRating: 4.5,
-    poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
+    poster: "https://www.ottking.info/wp-content/uploads/2024/09/Untitled-design-20.jpg",
   },
   {
     id: 5,
@@ -92,7 +92,7 @@ const TrendingMoviesList = [
     imdbRating: 7.3,
     averageRating: 4.0,
     poster:
-      "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg",
+      "https://www.ottking.info/wp-content/uploads/2024/09/Untitled-design-BERLIN.jpg",
   },
   {
     id: 6,
@@ -132,10 +132,11 @@ const NewlyReleasedMoviesList = [
     actors: ["Actor A", "Actor B"],
     imdbRating: 8.5,
     averageRating: 4.5,
-    poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
+    poster: "https://www.ottking.info/wp-content/uploads/2024/09/fli.jpg",
   },
   {
     id: 1,
+    category: "Newly-released-movies",
     title: "Movie 2",
     year: "2021",
     storyline: "This is the storyline for Movie 2.",
@@ -145,11 +146,12 @@ const NewlyReleasedMoviesList = [
     imdbRating: 7.3,
     averageRating: 4.0,
     poster:
-      "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg",
+      "https://www.ottking.info/wp-content/uploads/2024/09/Untitled-design-tej.jpg",
   },
   {
     id: 2,
-    title: "Movie 1",
+    category: "Newly-released-movies",
+    title: "Movie 3",
     year: "2023",
     storyline: "This is the storyline for Movie 1.",
     releaseDate: "2023-01-01",
@@ -157,11 +159,12 @@ const NewlyReleasedMoviesList = [
     actors: ["Actor A", "Actor B"],
     imdbRating: 8.5,
     averageRating: 4.5,
-    poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
+    poster: "https://www.ottking.info/wp-content/uploads/2024/09/lgp.jpg",
   },
   {
     id: 3,
-    title: "Movie 2",
+    category: "Newly-released-movies",
+    title: "Movie 4",
     year: "2021",
     storyline: "This is the storyline for Movie 2.",
     releaseDate: "2021-05-15",
@@ -170,11 +173,12 @@ const NewlyReleasedMoviesList = [
     imdbRating: 7.3,
     averageRating: 4.0,
     poster:
-      "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg",
+      "https://www.ottking.info/wp-content/uploads/2024/09/kk.jpg",
   },
   {
     id: 4,
-    title: "Movie 1",
+    category: "Newly-released-movies",
+    title: "Movie 5",
     year: "2023",
     storyline: "This is the storyline for Movie 1.",
     releaseDate: "2023-01-01",
@@ -182,11 +186,12 @@ const NewlyReleasedMoviesList = [
     actors: ["Actor A", "Actor B"],
     imdbRating: 8.5,
     averageRating: 4.5,
-    poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
+    poster: "https://www.ottking.info/wp-content/uploads/2024/09/win.jpg",
   },
   {
     id: 5,
-    title: "Movie 2",
+    category: "Newly-released-movies",
+    title: "Movie 6",
     year: "2021",
     storyline: "This is the storyline for Movie 2.",
     releaseDate: "2021-05-15",
@@ -195,11 +200,12 @@ const NewlyReleasedMoviesList = [
     imdbRating: 7.3,
     averageRating: 4.0,
     poster:
-      "https://m.media-amazon.com/images/M/MV5BNGE0NzE5Y2ItYjQ3Zi00YzNiLWFhNmMtODhkNjFhNzQ5ZGFlXkEyXkFqcGc@._V1_.jpg",
+      "https://www.ottking.info/wp-content/uploads/2024/09/par.jpg",
   },
   {
     id: 6,
-    title: "Movie 1",
+    category: "Newly-released-movies",
+    title: "Movie 7",
     year: "2023",
     storyline: "This is the storyline for Movie 1.",
     releaseDate: "2023-01-01",
@@ -211,6 +217,7 @@ const NewlyReleasedMoviesList = [
   },
   {
     id: 7,
+    category: "Newly-released-movies",
     title: "Movie 2",
     year: "2021",
     storyline: "This is the storyline for Movie 2.",

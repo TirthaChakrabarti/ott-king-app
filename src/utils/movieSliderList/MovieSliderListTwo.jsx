@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import '../../styles/homeSections/movieSliderListTwo.css';
 
-const MovieSlider = ({ title = "Movies", movies = [] }) => {
+const MovieSlider = ({ title = "Movies", category, movies = [] }) => {
     const scrollContainerRef = useRef(null);
 
     const [isAtStart, setIsAtStart] = useState(true);
@@ -54,8 +54,11 @@ const MovieSlider = ({ title = "Movies", movies = [] }) => {
                 <section ref={scrollContainerRef} className="cardlist-two">
                     {movies.map((movie, index) => (
                         <div key={index} >
-                            <Link to={`/trending-movies/${index}`}>
-                                <img src={movie} alt={`Movie ${index + 1}`} />
+                            <Link 
+                                to={`/${category}/${index}`}
+                                state={{ category }}
+                            >
+                                <img src={movie.poster} alt={`Movie ${index + 1}`} />
                             </Link>
                         </div>
                     ))}

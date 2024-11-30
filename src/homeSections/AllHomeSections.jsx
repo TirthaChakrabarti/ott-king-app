@@ -32,7 +32,7 @@ const AllHomeSections = () => {
             <TrendingMovieList/>
             <NewlyReleasedMoviesList/>
             <HomeBannerOne />
-            <DealOfTheWeek lar/>
+            <DealOfTheWeek largeCardData={largeCardData} smallCardData={smallCardData}/>
             <MovieSlider title="Trending TV Shows" movies={TrendingTVShowsList} />
             <HomeBannerTwo/>
             <TopWebSeriesList largeCardData={largeCardData} smallCardData={smallCardData}/>

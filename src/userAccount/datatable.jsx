@@ -5,6 +5,8 @@ import { Button } from "primereact/button";
 import { Tag } from "primereact/tag";
 import { useLocation } from "react-router-dom";
 
+import '../styles/userAccount/dataTable.css';
+
 export default function OrderTable() {
   const [orders, setOrders] = useState([]);
 
@@ -158,10 +160,10 @@ export default function OrderTable() {
   const footer = `In total there are ${orders ? orders.length : 0} subscription(s).`;
 
   return (
-    <div className="card " style={{ overflowX: "auto" }}>
+    <div className="card" style={{ overflowX: "auto", padding: '1rem' }}>
       <DataTable
-        style={{ borderRadius: "0", overflowX: "scroll" }}
-        scrollable
+        style={{ borderRadius: "0", minWidth: "100%" }}
+        // scrollable
         paginator
         rows={5}
         
