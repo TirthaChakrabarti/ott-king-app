@@ -21,7 +21,7 @@ export default function OrderTable() {
           orderId: "ORD001",
           packageName: "Gold Plan",
           paymentMethod: "Debit Card",
-          amount: 19.99,
+          amount: 20.99,
           paymentDate: "2024-11-01",
           effectiveFrom: "2024-11-02",
           expiryOn: "2025-11-01",
