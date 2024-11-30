@@ -6,6 +6,7 @@ import { largeCardData, smallCardData } from "../../data";
 const DealOfTheWeek = () => {
   return (
     <div>
+      Hi
       <LargeSmallSection
         Heading="Deal of the Week"
         largeCardData={largeCardData}
