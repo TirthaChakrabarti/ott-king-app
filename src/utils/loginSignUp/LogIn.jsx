@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import '../../styles/loginSignUp/login.css'
 import { Link } from "react-router-dom";
 
 const LogIn = () => {
+
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     return (
         <section className="login-parent">
             <div className="login-container">

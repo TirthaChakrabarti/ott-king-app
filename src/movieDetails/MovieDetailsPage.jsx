@@ -1,5 +1,5 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { Container, Card, Button, Badge } from "react-bootstrap";
 import LogoSlider from '../utils/LogoSection/LogoSlider';
 import MovieSlider from '../utils/movieSliderList/MovieSliderListTwo';
@@ -19,6 +19,11 @@ const TrendingMoviesList = [
 const MovieDetailsPage = ({ movies = [] }) => {
   const { id } = useParams();
   const movie = movies.find((movie) => movie.id === parseInt(id));
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <>

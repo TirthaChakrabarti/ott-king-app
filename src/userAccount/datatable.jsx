@@ -3,18 +3,25 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
 import { Tag } from "primereact/tag";
+import { useLocation } from "react-router-dom";
 
 export default function OrderTable() {
   const [orders, setOrders] = useState([]);
+
+  const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
   useEffect(() => {
     const fetchOrders = async () => {
       const data = [
         {
           orderId: "ORD001",
-          packageName: "Premium Plan",
-          paymentMethod: "Credit Card",
-          amount: 50.0,
+          packageName: "Gold Plan",
+          paymentMethod: "Debit Card",
+          amount: 19.99,
           paymentDate: "2024-11-01",
           effectiveFrom: "2024-11-02",
           expiryOn: "2025-11-01",
@@ -23,18 +30,18 @@ export default function OrderTable() {
         {
           orderId: "ORD002",
           packageName: "Basic Plan",
-          paymentMethod: "PayPal",
-          amount: 20.0,
+          paymentMethod: "NA",
+          amount: 0,
           paymentDate: "2024-10-15",
           effectiveFrom: "2024-10-16",
           expiryOn: "2025-10-15",
-          status: "Paid",
+          status: "Free",
         },
         {
           orderId: "ORD003",
-          packageName: "Premium Plan",
+          packageName: "Diamond Plan",
           paymentMethod: "Credit Card",
-          amount: 50.0,
+          amount: 29.99,
           paymentDate: "2024-11-01",
           effectiveFrom: "2024-11-02",
           expiryOn: "2025-11-01",
@@ -42,9 +49,9 @@ export default function OrderTable() {
         },
         {
           orderId: "ORD004",
-          packageName: "Premium Plan",
-          paymentMethod: "Credit Card",
-          amount: 50.0,
+          packageName: "Gold Plan",
+          paymentMethod: "Debit Card",
+          amount: 29.99,
           paymentDate: "2024-11-01",
           effectiveFrom: "2024-11-02",
           expiryOn: "2025-11-01",
@@ -52,19 +59,19 @@ export default function OrderTable() {
         },
         {
           orderId: "ORD005",
-          packageName: "Premium Plan",
-          paymentMethod: "Credit Card",
-          amount: 50.0,
+          packageName: "Basic Plan",
+          paymentMethod: "NA",
+          amount: 0,
           paymentDate: "2024-11-01",
           effectiveFrom: "2024-11-02",
           expiryOn: "2025-11-01",
-          status: "Paid",
+          status: "Free",
         },
         {
           orderId: "ORD006",
-          packageName: "Premium Plan",
+          packageName: "Gold Plan",
           paymentMethod: "Credit Card",
-          amount: 50.0,
+          amount: 19.99,
           paymentDate: "2024-11-01",
           effectiveFrom: "2024-11-02",
           expiryOn: "2025-11-01",
@@ -72,9 +79,9 @@ export default function OrderTable() {
         },
         {
           orderId: "ORD001",
-          packageName: "Premium Plan",
+          packageName: "Diamond Plan",
           paymentMethod: "Credit Card",
-          amount: 50.0,
+          amount: 29.99,
           paymentDate: "2024-11-01",
           effectiveFrom: "2024-11-02",
           expiryOn: "2025-11-01",
@@ -82,19 +89,19 @@ export default function OrderTable() {
         },
         {
           orderId: "ORD001",
-          packageName: "Premium Plan",
+          packageName: "Basic Plan",
           paymentMethod: "Credit Card",
-          amount: 50.0,
+          amount: 29.99,
           paymentDate: "2024-11-01",
           effectiveFrom: "2024-11-02",
           expiryOn: "2025-11-01",
-          status: "Paid",
+          status: "Free",
         },
         {
           orderId: "ORD001",
-          packageName: "Premium Plan",
+          packageName: "Diamond Plan",
           paymentMethod: "Credit Card",
-          amount: 50.0,
+          amount: 29.99,
           paymentDate: "2024-11-01",
           effectiveFrom: "2024-11-02",
           expiryOn: "2025-11-01",
@@ -123,7 +130,7 @@ export default function OrderTable() {
     switch (status) {
       case "Paid":
         return "success";
-      case "Pending":
+      case "Free":
         return "warning";
       case "Failed":
         return "danger";
@@ -144,11 +151,11 @@ export default function OrderTable() {
         padding: "10px",
       }}
     >
-      <span className="text-xl text-900 font-bold">Transaction History</span>
+      <span className="text-xl text-900 font-bold">Subscription History</span>
       {/* <Button icon="pi pi-refresh" rounded raised /> */}
     </div>
   );
-  const footer = `In total there are ${orders ? orders.length : 0} orders.`;
+  const footer = `In total there are ${orders ? orders.length : 0} subscription(s).`;
 
   return (
     <div className="card " style={{ overflowX: "auto" }}>
