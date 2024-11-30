@@ -20,6 +20,7 @@ import HomeBannerThree from "./sections/HomeBannerThree";
 import HomeLogoSlider from "./sections/HomeLogoSlider";
 import MovieSlider from "../utils/movieSliderList/MovieSliderListTwo";
 import { TrendingTVShowsList } from "../data";
+import { largeCardData, smallCardData } from "../data";
 
 
 
@@ -31,10 +32,10 @@ const AllHomeSections = () => {
             <TrendingMovieList/>
             <NewlyReleasedMoviesList/>
             <HomeBannerOne />
-            <DealOfTheWeek/>
+            <DealOfTheWeek lar/>
             <MovieSlider title="Trending TV Shows" movies={TrendingTVShowsList} />
             <HomeBannerTwo/>
-            <TopWebSeriesList/>
+            <TopWebSeriesList largeCardData={largeCardData} smallCardData={smallCardData}/>
             <OTTKingMovieList/>
             <KidsShowsList/>
             <OTTKingSports/>
