@@ -6,7 +6,7 @@
     /* background: rgb(70, 70, 100); */
     /* background: linear-gradient(145deg, #0a1128, #001f54); */
     background: linear-gradient(145deg, #001f54, #0a1128, #0d3b66);
-    box-shadow: 0 0 40px rgba(66, 153, 254, 0.7);
+    box-shadow: 0 0 30px rgba(66, 153, 254, 0.6);
     /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); */
     color: white;
     border: none !important;
@@ -19,7 +19,7 @@
   .edit-details-parent:hover {
     /* box-shadow: 0 5px 8px rgba(0, 119, 255, 0.8), 0 0 20px rgba(0, 119, 255, 0.8); */
     /* box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 119, 255, 0.8); */
-    box-shadow: 0 5px 10px rgba(0, 119, 255, 0.8), 0 0 25px rgba(0, 119, 255, 0.9);
+    box-shadow: 0 6px 12px rgba(0, 119, 255, 0.8), 0 0 30px rgba(0, 119, 255, 0.9);
   }
   
   .edit-header {

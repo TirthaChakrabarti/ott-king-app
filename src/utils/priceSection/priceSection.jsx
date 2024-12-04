@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import PriceCard from "./priceCard";
 import LogoSection from "../LogoSection/LogoSection";
-// import FullLogoList from "../LogoSection/FullLogoList";
 
 import '../../styles/homeSections/logoSection.css';
 
