@@ -1,12 +1,25 @@
 .edit-details-parent {
-    width: 55%;
+    width: 50%;
     height: auto;
-    /* padding: 20px; */
-    background: rgb(70, 70, 100);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
+    padding: 8px;
+    /* background: rgb(70, 70, 100); */
+    /* background: linear-gradient(145deg, #0a1128, #001f54); */
+    background: linear-gradient(145deg, #001f54, #0a1128, #0d3b66);
+    box-shadow: 0 0 40px rgba(66, 153, 254, 0.7);
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); */
     color: white;
     border: none !important;
+    border-radius: 10px;
     margin-bottom: 30px;
+    background: transparent;
+    transition: all 0.5s linear;
+  }
+
+  .edit-details-parent:hover {
+    /* box-shadow: 0 5px 8px rgba(0, 119, 255, 0.8), 0 0 20px rgba(0, 119, 255, 0.8); */
+    /* box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 119, 255, 0.8); */
+    box-shadow: 0 5px 10px rgba(0, 119, 255, 0.8), 0 0 25px rgba(0, 119, 255, 0.9);
   }
   
   .edit-header {
@@ -15,11 +28,13 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     font-weight: 500;
     margin-bottom: 20px;
-    color: white;
-    background: rgb(168, 168, 193);
+    /* color: white; */
+    color: #29cff4;
+    text-shadow: 0 0 10px rgba(0, 119, 255, 0.8);
+    /* background: rgb(168, 168, 193); */
   }
   
   .edit-name, .edit-age-phone {
@@ -36,11 +51,18 @@
   .edit-age-phone input {
     /* width: 95%; */
     padding: 10px;
-    border: 1px solid white;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid gold;
+    opacity: 0.8;
+    transition: all 0.3s;
+    /* background: rgba(255, 255, 255, 0.1); */
     background: transparent;
     color: white;
-    outline: none;
-    transition: all 0.3s;
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px; 
   }
   
   input::placeholder {
@@ -50,38 +72,80 @@
   }
   
   input:focus {
-    border: 1px solid #3498db;
+    /* border: 1px solid #3498db; */
+    background: rgba(255, 255, 255, 0.1);
   }
   
   .edit-gender {
-    display: flex;
-    align-items: center;
     justify-content: center;
     padding: 10px 20px;
     margin: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid white;
+    /* background: rgba(255, 255, 255, 0.1); */
+    /* border: 1px solid white; */
     border-radius: 5px;
     font-size: 1.1rem;
     color: white;
 }
 
+.gender-form {
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.gender {
+  color: lightgrey;
+  opacity: 0.8;
+  margin-right: 15px;
+}
+
 .edit-gender label {
     margin-right: 10px;
-    font-size: 0.95rem;
-    color: lightgray;
+    font-size: 1.1rem;
+    margin-left: 5px;
+    /* margin-right: 10px; */
+    /* color: lightgray; */
 }
 
 .edit-gender input[type="radio"] {
-    margin-left: 10px;
+    /* margin-left: 10px;
     margin-right: 5px;
-    accent-color: #3498db; /* Custom color for radio buttons */
+    accent-color: #3498db;  */
+    display: none;
 }
 
-.edit-gender input[type="radio"]:hover {
+/* .edit-gender input[type="radio"]:hover {
     transform: scale(1.1);
+} */
+
+.select-gender-button {
+  width: 100px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(225, 191, 105);
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s linear;
 }
 
+/* Hover effect */
+.select-gender-button:hover {
+  outline: none;
+  border: none;
+  transform: scale(1.1);
+}
+
+/* Active (selected) state when radio is checked */
+  input[type="radio"]:checked + .select-gender-button {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+  }
   
   .edit-submit {
     display: flex;
@@ -103,9 +167,9 @@
 }
 
 .edit-submit-button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     font-size: 1.1rem;
-    box-shadow: 0 4px 15px rgba(193, 182, 19, 0.6);
+    box-shadow: 0 0 15px gold;
 }
   
 @media (max-width: 480px) {

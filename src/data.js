@@ -114,8 +114,7 @@ export const TrendingTVShowsList = [
       averageRating: 4.0,
       poster: "https://m.media-amazon.com/images/I/915xJIYLb+L.jpg",
     },
-  ];
-  
+  ];  
 
 export const largeCardData = [
     { image: "https://hdwallpaperim.com/wp-content/uploads/2017/08/25/123982-night-urban.jpg", name: "The Wasted Times", season: "Season 1" }
