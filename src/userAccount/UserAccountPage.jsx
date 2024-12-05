@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Accordion } from 'react-bootstrap'
 
 import '../styles/userAccount/userAccount.css'
 import { Link } from 'react-router-dom'
+import Modal from './Modal'
+import EditDetais from './EditDetais'
 
 const UserAccountPage = () => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
   return (
     <section className='account-details-parent'>
 
@@ -20,9 +28,14 @@ const UserAccountPage = () => {
                             <h4 id='personal-details'>Personal Details</h4>
                             <p id='personal-details-text'>Change your Name, Age and Gender</p>
                         </div>
-                        <Link to={'/edit-details'}>
-                            <div id='edit'>Edit</div>
-                        </Link>
+                        {/* <Link to={'/edit-details'}>
+                            <div id='edit' onClick={openModal}>Edit</div>
+                        </Link> */}
+                        <div id='edit' onClick={openModal} style={{cursor: 'pointer'}}>Edit</div>
+
+                        <Modal isOpen={isModalOpen} onClose={closeModal}>
+                            <EditDetais />
+                        </Modal>
                     </div>
                     <div className="delete-account">
                         <div>

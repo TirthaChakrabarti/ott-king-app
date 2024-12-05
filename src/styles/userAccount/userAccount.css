@@ -142,10 +142,6 @@ a {
   color: inherit; /* Optional: Keeps the text color consistent */
 }
 
-#edit {
-  margin-top: 20px;
-}
-
 @media (max-width: 400px) {
 
     .account-details-parent {
