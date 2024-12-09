@@ -59,7 +59,10 @@ const Header = () => {
                 </div>
                 <div className="user-account">
                     <Link to={'/user-details'}>
-                        <FontAwesomeIcon icon={faUser} style={{ color: 'white', fontSize: '1.5rem' }}/>
+                        <FontAwesomeIcon 
+                            icon={faUser} 
+                            style={{ color: 'white', fontSize: '1.5rem' }}
+                        />
                     </Link>
                 </div>
             </div>
