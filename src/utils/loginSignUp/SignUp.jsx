@@ -29,6 +29,7 @@ const SignUp = () => {
                         <div className="form-input-container">
                             <input className="name" type="text" placeholder="Enter Name" />
                             <input className="email" type="email" placeholder="Enter Email" />
+                            <input className="phone" type="number" placeholder="Enter Phone Number" />
                         </div>
                         
                     </div>

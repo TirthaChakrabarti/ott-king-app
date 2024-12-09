@@ -11,11 +11,11 @@ const EditDetais = () => {
         <div className="edit-header">Edit Personal Details</div>
           <div>
               <div className="edit-name">
-                  <input type="text" placeholder="First Name" />
-                  <input type='text' placeholder="Last Name" />
+                  <input type="text" placeholder="Enter Name" />
+                  <input type='text' placeholder="Enter email" />
               </div>
               <div className='edit-age-phone'>
-                <input type='number' placeholder="Enter Age" />
+                <input type='date' placeholder="Enter Age" style={{color: 'white', placeholderColor: 'gold'}}/>
                 <input type='number' placeholder="Enter Phone No." />
               </div>
               <div className="edit-gender">

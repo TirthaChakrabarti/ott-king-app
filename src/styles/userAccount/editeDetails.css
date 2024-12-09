@@ -79,6 +79,10 @@
     /* border: 1px solid #3498db; */
     background: rgba(255, 255, 255, 0.1);
   }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    color: gold;
+  }
   
   .edit-gender {
     justify-content: center;

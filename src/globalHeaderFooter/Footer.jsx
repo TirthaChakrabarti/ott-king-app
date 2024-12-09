@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./footer.css"
+import { Link } from "react-router-dom";
 
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -18,6 +19,7 @@ const Footer = () => {
       </div>
       <div className="footer-links">
         <ul className="footer-column">
+          <li><Link to="/user-details">My Account</Link></li>
           <li><a href="#">FAQ</a></li>
           <li><a href="#">Investor Relations</a></li>
           <li><a href="#">Privacy</a></li>
