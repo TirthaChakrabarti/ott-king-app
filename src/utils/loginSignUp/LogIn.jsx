@@ -1,16 +1,53 @@
-import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import axiosInstance from "../../api/axiosInstance";
 
 import '../../styles/loginSignUp/login.css'
-import { Link } from "react-router-dom";
 
 const LogIn = () => {
 
-    const location = useLocation();
+    const [phone, setPhone] = useState('');
+    const [otp, setOtp] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();    
+    const from = location.state?.from?.pathnam || '/';
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location]);
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+
+        console.log(phone, otp);
+    
+        try {
+           const response = await axiosInstance.post('http://localhost:8080/api/auth/login', 
+            { 
+                phone: phone, 
+                otp: otp 
+            });
+
+          const token = response.data.token;
+          localStorage.setItem("token", token);
+          alert('Login successful!');
+          navigate(from, { replace: true });
+    
+          // Retrieve the redirect path from sessionStorage
+        //   const redirectPath = sessionStorage.getItem('redirectPath') || '/';
+    
+          // Clear the redirect path after use
+        //   sessionStorage.removeItem('redirectPath');
+    
+          // Redirect the user to the original requested page
+        //   navigate(redirectPath);
+    
+        } catch (error) {
+          console.error(error);
+          alert('Login failed : Invalid credentials or server error.');
+          console.log('Log in failed. Please try again.');
+        }
+      };
 
     return (
         <section className="login-parent">
@@ -20,17 +57,17 @@ const LogIn = () => {
                 <div className="login-image-container"></div>
 
                 {/* Form section  */}
-                <div className="form-container">
+                <form className="form-container" onSubmit={handleLogin}>
                     <div className="form-header">
                         <h3>Your Plan Awaits!</h3>
                         <p>Please verify your mobile number</p>
                     </div>
                     <div className="form-details">
                         <div className="form-input-phone-container">
-                            <input className="form-input-phone" type="number" placeholder="Mobile Number" />
+                            <input className="form-input-phone" type="number" placeholder="Mobile Number" onChange={(e) => setPhone(e.target.value)}/>
                             <button className="verify-button">Verify</button>
                         </div>
-                        <input className="password-input" type="password" placeholder="Enter OTP" />
+                        <input className="password-input" type="password" placeholder="Enter OTP" onChange={(e) => setOtp(e.target.value)}/>
                     </div>
                     <div className="statement-container">
                         <form className="statement-form">
@@ -47,11 +84,11 @@ const LogIn = () => {
                         </form>
                     </div>
                     <div className="form-submit-button-container">
-                        <Link to={'/sign-up'}>
+                        {/* <Link to={'/sign-up'}> */}
                             <button className="form-submit-button">Continue</button>
-                        </Link>
+                        {/* </Link> */}
                     </div>
-                </div>
+                </form>
             </div>
         </section>
     )

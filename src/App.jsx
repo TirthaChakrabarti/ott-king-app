@@ -11,6 +11,7 @@ import SignUpPage from "./LogInSignUp/SignUpPage";
 import UserAccountPage from "./userAccount/UserAccountPage";
 import TransactionHistory from "./userAccount/TransactionHistory";
 import EditDetais from "./userAccount/EditDetais";
+import ProtectedRoute from "./accessibility/ProtectedRoute";
 
 
 // Data list:
@@ -410,9 +411,24 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<Homepage />} />
-        <Route path="/pricing" element={<PricingSection />} />
 
-        <Route path="/user-details" element={<UserAccountPage />} />
+        <Route 
+          path="/pricing" 
+          element={
+            // <ProtectedRoute>
+              <PricingSection />
+            // </ProtectedRoute>
+          } 
+        />
+
+        <Route 
+          path="/user-details" 
+          element={
+            <ProtectedRoute>
+              <UserAccountPage />
+            </ProtectedRoute>
+          } 
+        />
 
         <Route
           path="/trending-movies/:id"

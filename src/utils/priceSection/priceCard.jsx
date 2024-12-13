@@ -43,13 +43,13 @@ const PriceCard = (
             <div>
                 <p id="name">{name}</p>
                 <p id="quality">{price}</p>
-                <Link to={'/log-in'}>
+                {/* <Link to={'/log-in'}> */}
                     <button 
                         className="plan-card-subscribe-button"
                     >
                         Choose Plan
                     </button>
-                </Link>
+                {/* </Link> */}
                 <div className="features-container">
                     <p className="features">{feature1}</p>
                     <p className="features">{feature2}</p>
