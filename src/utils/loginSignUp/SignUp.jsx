@@ -10,7 +10,9 @@ const SignUp = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    const navigate = useNavigate();
     const location = useLocation();
+    const from = location.state?.from?.pathname || '/user-details';
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -18,6 +20,7 @@ const SignUp = () => {
 
     const handleRegister = async (e) => {
         e.preventDefault();
+
         try {
             await axios.post(`http://localhost:8080/api/auth/register`, {
                 name: name,
@@ -26,7 +29,7 @@ const SignUp = () => {
                 }
             )
             alert('Registration successful.');
-            Navigate('/login');
+            navigate(from, { replace: true });
         } catch (error) {
             console.error(error.response.data.message);
             alert('Registration failed.');

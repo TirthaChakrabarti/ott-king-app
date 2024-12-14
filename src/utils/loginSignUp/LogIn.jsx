@@ -10,7 +10,7 @@ const LogIn = () => {
     const [otp, setOtp] = useState('');
     const navigate = useNavigate();
     const location = useLocation();    
-    const from = location.state?.from?.pathnam || '/';
+    const from = location.state?.from?.pathname || '/';
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -32,6 +32,7 @@ const LogIn = () => {
           localStorage.setItem("token", token);
           alert('Login successful!');
           navigate(from, { replace: true });
+          console.log('Requested Path and redirecting to: ',from);
     
           // Retrieve the redirect path from sessionStorage
         //   const redirectPath = sessionStorage.getItem('redirectPath') || '/';

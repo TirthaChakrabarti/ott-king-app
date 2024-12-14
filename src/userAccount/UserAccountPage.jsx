@@ -13,6 +13,12 @@ const UserAccountPage = () => {
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
 
+    const signOutClickHandler = () => {
+        localStorage.removeItem('token');
+        alert('Sign out successful.');
+        window.location.reload();
+    }
+
   return (
     <section className='account-details-parent'>
 
@@ -37,19 +43,19 @@ const UserAccountPage = () => {
                             <EditDetais />
                         </Modal>
                     </div>
+                    <div className="signout">
+                        <div>
+                            <h4 id='sign-out'>Sign Out</h4>
+                            <p id='sign-out-text'>You wil be signed out form this device</p>
+                        </div>
+                        <div id='signout' style={{cursor: 'pointer'}} onClick={signOutClickHandler}>Sign Out</div>
+                    </div>
                     <div className="delete-account">
                         <div>
                             <h4 id='delete-account'>Delete Account</h4>
                             <p id='delete-account-text'>All your information will be lost and unrecoverable</p>
                         </div>
                         <div id='delete'>Delete</div>
-                    </div>
-                    <div className="signout">
-                        <div>
-                            <h4 id='sign-out'>Sign Out</h4>
-                            <p id='sign-out-text'>You wil be signed out form this device</p>
-                        </div>
-                        <div id='signout'>Sign Out</div>
                     </div>
                 </div>
             </Accordion.Body>

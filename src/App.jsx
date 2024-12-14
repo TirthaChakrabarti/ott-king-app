@@ -12,6 +12,9 @@ import UserAccountPage from "./userAccount/UserAccountPage";
 import TransactionHistory from "./userAccount/TransactionHistory";
 import EditDetais from "./userAccount/EditDetais";
 import ProtectedRoute from "./accessibility/ProtectedRoute";
+import PaymentGateway from "./home/PaymentGateway";
+import LogoSection from "./utils/LogoSection/LogoSection";
+import LogIn from "./utils/loginSignUp/LogIn";
 
 
 // Data list:
@@ -412,24 +415,6 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Homepage />} />
 
-        <Route 
-          path="/pricing" 
-          element={
-            // <ProtectedRoute>
-              <PricingSection />
-            // </ProtectedRoute>
-          } 
-        />
-
-        <Route 
-          path="/user-details" 
-          element={
-            <ProtectedRoute>
-              <UserAccountPage />
-            </ProtectedRoute>
-          } 
-        />
-
         <Route
           path="/trending-movies/:id"
           element={<MovieDetailsPage movies={TrendingMoviesList} />}
@@ -468,8 +453,40 @@ function App() {
         />
 
         <Route path="/log-in" element={<LogInPage />} />
+
+        {/* <Route 
+          path="/log-in" 
+          element={
+            <ProtectedRoute>
+              <LogInPage/>
+            </ProtectedRoute>
+          } 
+        /> */}
+
         <Route path="/sign-up" element={<SignUpPage />} />
+
+        <Route path="/pricing" element={<PricingSection />} />
+
+        <Route 
+          path="/payment-gateway" 
+          element={
+            <ProtectedRoute>
+              <PaymentGateway />
+            </ProtectedRoute>
+        } 
+        />
+
+        <Route 
+          path="/user-details" 
+          element={
+            <ProtectedRoute>
+              <UserAccountPage />
+            </ProtectedRoute>
+          } 
+        />
+
         <Route path="/transaction-history" element={<TransactionHistory />} />
+
         <Route path="/edit-details" element={<EditDetais />} />
 
       </Routes>
