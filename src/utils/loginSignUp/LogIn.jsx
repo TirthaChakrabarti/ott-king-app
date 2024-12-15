@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
+import axios from "axios";
 import axiosInstance from "../../api/axiosInstance";
 
 import '../../styles/loginSignUp/login.css'
@@ -22,7 +23,7 @@ const LogIn = () => {
         console.log(phone, otp);
     
         try {
-           const response = await axiosInstance.post('http://localhost:8080/api/auth/login', 
+           const response = await axios.post('http://localhost:8080/api/auth/login', 
             { 
                 phone: phone, 
                 otp: otp 
@@ -89,6 +90,19 @@ const LogIn = () => {
                             <button className="form-submit-button">Continue</button>
                         {/* </Link> */}
                     </div>
+
+                    <p 
+                        style={{color: 'white', fontSize: '1.1rem', marginTop: '30px'}}
+                    >
+                        New User? &nbsp;
+                        <span 
+                            
+                        >
+                            <Link to={'/sign-up'} style={{color: 'cyan', cursor: 'pointer'}}>
+                                Register here!
+                            </Link>
+                        </span>
+                    </p>
                 </form>
             </div>
         </section>

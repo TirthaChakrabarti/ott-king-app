@@ -11,9 +11,9 @@ const ProtectedRoute = ({ children }) => {
         return <Navigate to={"/log-in"} state={{ from: location }}/>
     }
 
-    if (token && location.pathname === "/log-in") {
-        return <Navigate to={"/"} />;
-    }
+    // if (token && location.pathname === "/log-in") {
+    //     return <Navigate to={"/"} />;
+    // }
 
     return children;
 }

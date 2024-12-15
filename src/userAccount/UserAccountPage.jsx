@@ -22,16 +22,38 @@ const UserAccountPage = () => {
   return (
     <section className='account-details-parent'>
 
+        <div className="subscription">
+            <div className="subscription-header">
+                <h5>User Details</h5>
+            </div>
+            <div 
+                className="subscription-details"
+                style={{width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}
+            >
+                <div className="subscription-details">
+                    <p id='plan-name'>Tirtha Chakrabarti</p>
+                    <p id='plan-price'>Phone: 7047276464</p>
+                    <p id='plan-expiry'>Email: chakrabartitirtha@gmail.com</p>
+                    <p style={{color: 'lightgrey'}}>Birthdate: 6th May, 1993</p>
+                </div>
+                <img 
+                    src='https://cdn-icons-png.flaticon.com/512/149/149071.png' 
+                    alt='user' 
+                    style={{width: '140px', height: '140px', borderRadius: '50%', marginRight: '40px'}}
+                />
+            </div>
+        </div>
+
         <Accordion defaultActiveKey={['0']} alwaysOpen className="custom-accordion">
         <Accordion.Item eventKey="0" className="custom-accordion-item">
             <Accordion.Header className='custom-accordion-header'>
-                User Details
+                Account Settings
             </Accordion.Header>
             <Accordion.Body className="custom-accordion-body">
                 <div className="account-details-subsections">
                     <div className="personal-details">
                         <div>
-                            <h4 id='personal-details'>Personal Details</h4>
+                            <h4 id='personal-details'>Edit Personal Details</h4>
                             <p id='personal-details-text'>Change your Name, Age and Gender</p>
                         </div>
                         {/* <Link to={'/edit-details'}>

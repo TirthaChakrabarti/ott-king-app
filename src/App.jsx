@@ -485,9 +485,23 @@ function App() {
           } 
         />
 
-        <Route path="/transaction-history" element={<TransactionHistory />} />
+        <Route 
+          path="/transaction-history" 
+          element={
+            <ProtectedRoute>
+              <TransactionHistory />
+            </ProtectedRoute>
+          } 
+        />
 
-        <Route path="/edit-details" element={<EditDetais />} />
+        <Route 
+          path="/edit-details" 
+          element={
+          <ProtectedRoute>
+            <EditDetais />
+          </ProtectedRoute>
+          } 
+        />
 
       </Routes>
       <Footer />
