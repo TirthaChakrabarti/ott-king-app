@@ -17,6 +17,26 @@ const LogIn = () => {
         window.scrollTo(0, 0);
     }, [location]);
 
+    const handleInvalid = (e) => {
+        e.target.setCustomValidity(""); // Reset custom message
+        
+        if (e.target.name === "phone") {
+          e.target.setCustomValidity("Please enter your phone number.");
+        }
+
+        if(e.target.name === "otp") {
+            e.target.setCustomValidity("Please enter your OTP.");
+        }
+
+        if (e.target.name === "agree") {
+          e.target.setCustomValidity("You must agree to continue.");
+        }
+      };
+
+      const handleInput = (e) => {
+        e.target.setCustomValidity(""); // Clear custom validity message
+      };
+
     const handleLogin = async (e) => {
         e.preventDefault();
 
@@ -66,24 +86,56 @@ const LogIn = () => {
                     </div>
                     <div className="form-details">
                         <div className="form-input-phone-container">
-                            <input className="form-input-phone" type="number" placeholder="Mobile Number" onChange={(e) => setPhone(e.target.value)}/>
+                            <input 
+                                className="form-input-phone" 
+                                name="phone"
+                                type="text" 
+                                minlength="10"
+                                maxlength="10"
+                                pattern="\d{10}"
+                                required
+                                placeholder="Mobile Number" 
+                                onInvalid={handleInvalid}
+                                onInput={handleInput}
+                                onChange={(e) => setPhone(e.target.value)}
+                            />
                             <button className="verify-button">Verify</button>
                         </div>
-                        <input className="password-input" type="password" placeholder="Enter OTP" onChange={(e) => setOtp(e.target.value)}/>
+                        <input 
+                            className="password-input" 
+                            name="otp"
+                            type="password" 
+                            placeholder="Enter OTP" 
+                            required
+                            onInvalid={handleInvalid}
+                            onInput={handleInput}
+                            onChange={(e) => setOtp(e.target.value)}
+                        />
                     </div>
                     <div className="statement-container">
-                        <form className="statement-form">
+                        <div className="statement-form">
                             <label className="statement-checkbox">
-                                <input type="checkbox" name="option1" value="Option 1" />
+                                <input 
+                                    type="checkbox" 
+                                    name="option1" 
+                                    value="Option 1" 
+                                    required
+                                    onInvalid={handleInvalid}
+                                    onInput={handleInput}
+                                />
                                 <span class="custom-checkbox"></span>
                                 <p>I am above 18 years of age and read and hereby accept the <span><a href="#">Terms & Conditions</a></span> and <span><a href="#">Terms & Conditions</a></span></p>
                             </label>
                             <label className="statement-checkbox">
-                                <input type="checkbox" name="option2" value="Option 2" />
+                                <input 
+                                    type="checkbox" 
+                                    name="option2" 
+                                    value="Option 2" 
+                                />
                                 <span class="custom-checkbox"></span>
                                 <p>I agree to receive offers and promotional communications</p>
                             </label>
-                        </form>
+                        </div>
                     </div>
                     <div className="form-submit-button-container">
                         {/* <Link to={'/sign-up'}> */}

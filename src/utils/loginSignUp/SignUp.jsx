@@ -18,6 +18,30 @@ const SignUp = () => {
         window.scrollTo(0, 0);
     }, [location]);
 
+    const handleInvalid = (e) => {
+        e.target.setCustomValidity(""); // Reset custom message
+        if (e.target.name === "username") {
+          e.target.setCustomValidity("Please enter your username.");
+        }
+        // if (e.target.name === "email") {
+        //   if (!e.target.value) {
+        //     e.target.setCustomValidity("Email is required.");
+        //   } else {
+        //     e.target.setCustomValidity("Please enter a valid email address.");
+        //   }
+        // }
+        if (e.target.name === "phone") {
+          e.target.setCustomValidity("Please enter your phone number.");
+        }
+        if (e.target.name === "agree") {
+          e.target.setCustomValidity("You must agree to continue.");
+        }
+      };
+
+      const handleInput = (e) => {
+        e.target.setCustomValidity(""); // Clear custom validity message
+      };
+
     const handleRegister = async (e) => {
         e.preventDefault();
 
@@ -52,32 +76,63 @@ const SignUp = () => {
 
                 <div className="form-details">
                     <div className="form-input-container">
-                        <input className="name" type="text" placeholder="Enter Name" onChange={(e) => setName(e.target.value)}/>
-                        <input className="email" type="email" placeholder="Enter Email" onChange={(e) => setEmail(e.target.value)}/>
-                        <input className="phone" type="number" placeholder="Enter Phone Number" onChange={(e) => setPhone(e.target.value)}/>
+                        <input 
+                            className="name" 
+                            type="text" 
+                            name='username'
+                            placeholder="Enter Name" 
+                            onInvalid={handleInvalid}
+                            onInput={handleInput}
+                            required onChange={(e) => setName(e.target.value)}
+                        />
+                        <input 
+                            className="email" 
+                            type="email" 
+                            placeholder="Enter Email" 
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <input 
+                            className="phone" 
+                            name="phone"
+                            type="text" 
+                            minlength="10"
+                            maxlength="10"
+                            pattern="\d{10}"
+                            placeholder="Enter Phone Number" 
+                            onInvalid={handleInvalid}
+                            onInput={handleInput}
+                            required onChange={(e) => setPhone(e.target.value)}
+                        />
                     </div>
                     
                 </div>
 
-                {/* <div className="form-details">
-                    <input className="form-input" type="text" placeholder="Enter Name" />
-                    <input className='form-input' type="email" placeholder="Enter Email" />
-                </div> */}
-
-
                 <div className="statement-container">
-                    <form className="statement-form">
+                    <div className="statement-form">
                         <label className="statement-checkbox">
-                            <input type="checkbox" name="option1" value="Option 1" />
-                            <span class="custom-checkbox"></span>
+                            <input 
+                                type="checkbox" 
+                                id="agree" 
+                                name="agree" 
+                                value="Agree" 
+                                required
+                                onInvalid={handleInvalid}
+                                onInput={handleInput}
+                            />
+                            {/* <span class="custom-checkbox"></span> */}
                             <p>I am above 18 years of age and read and hereby accept the <span><a href="#">Terms & Conditions</a></span> and <span><a href="#">Terms & Conditions</a></span></p>
                         </label>
                         <label className="statement-checkbox">
-                            <input type="checkbox" name="option2" value="Option 2" />
-                            <span class="custom-checkbox"></span>
+                            <input 
+                                type="checkbox" 
+                                id='agree'
+                                name="agree" 
+                                value="agree"
+                            />
+                            {/* <span class="custom-checkbox"></span> */}
                             <p>I agree to receive offers and promotional communications</p>
                         </label>
-                    </form>
+                    </div>
                 </div>
                 <div className="form-submit-button-container">
                     {/* <Link to={'/'}> */}

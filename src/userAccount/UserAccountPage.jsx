@@ -5,6 +5,8 @@ import '../styles/userAccount/userAccount.css'
 import { Link } from 'react-router-dom'
 import Modal from './Modal'
 import EditDetais from './EditDetais'
+import axiosInstance from '../api/axiosInstance'
+import axios from 'axios'
 
 const UserAccountPage = () => {
 
@@ -17,6 +19,19 @@ const UserAccountPage = () => {
         localStorage.removeItem('token');
         alert('Sign out successful.');
         window.location.reload();
+    }
+
+    const deleteClickHandler = async () => {
+        try {
+            prompt('Are you sure you want to delete your account?');
+            
+            // localStorage.removeItem('token');
+            await axiosInstance.delete('/auth/delete');
+            alert('Account deleted successfully.');
+            window.location.reload();
+        } catch (error) {
+            console.error(error);
+        }
     }
 
   return (
@@ -77,7 +92,7 @@ const UserAccountPage = () => {
                             <h4 id='delete-account'>Delete Account</h4>
                             <p id='delete-account-text'>All your information will be lost and unrecoverable</p>
                         </div>
-                        <div id='delete'>Delete</div>
+                        <div id='delete' style={{cursor: 'pointer'}} onClick={deleteClickHandler}>Delete</div>
                     </div>
                 </div>
             </Accordion.Body>
