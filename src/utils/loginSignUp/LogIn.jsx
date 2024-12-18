@@ -9,6 +9,11 @@ const LogIn = () => {
 
     const [phone, setPhone] = useState('');
     const [otp, setOtp] = useState('');
+
+    const [phoneMessage, setPhoneMessage] = useState('');
+    const [otpMessage, setOtpMessage] = useState(''); 
+    const [checkboxMessage, setCheckboxMessage] = useState('');
+
     const navigate = useNavigate();
     const location = useLocation();    
     const from = location.state?.from?.pathname || '/';
@@ -40,8 +45,30 @@ const LogIn = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
 
-        console.log(phone, otp);
-    
+        setPhoneMessage('');
+        setOtpMessage('');
+        setCheckboxMessage('');
+
+        let isValid = true
+
+        if (!phone) {
+            setPhoneMessage('Phone number is required');
+            isValid = false;
+        }
+
+        if (!otp) {
+            setOtpMessage('OTP is required');
+            isValid = false;
+        }
+
+        const termsCheckbox = document.querySelector('#agree');
+        if(!termsCheckbox.checked) {
+            setCheckboxMessage('You need to accept the age limit');
+            isValid = false;
+        }
+
+        if(!isValid) return;
+
         try {
            const response = await axios.post('http://localhost:8080/api/auth/login', 
             { 
@@ -51,7 +78,7 @@ const LogIn = () => {
 
           const token = response.data.token;
           localStorage.setItem("token", token);
-          alert('Login successful!');
+        //   alert('Login successful!');
           navigate(from, { replace: true });
           console.log('Requested Path and redirecting to: ',from);
     
@@ -93,44 +120,75 @@ const LogIn = () => {
                                 minlength="10"
                                 maxlength="10"
                                 pattern="\d{10}"
-                                required
                                 placeholder="Mobile Number" 
-                                onInvalid={handleInvalid}
-                                onInput={handleInput}
+                                // required
+                                // onInvalid={handleInvalid}
+                                // onInput={handleInput}
                                 onChange={(e) => setPhone(e.target.value)}
                             />
                             <button className="verify-button">Verify</button>
                         </div>
+
+                        {phoneMessage && (
+                            <p 
+                                className="error-message"
+                                style={{ marginTop: '0', paddingTop: '0', frontSize: '0.3rem', color: 'cyan' }}
+                            >
+                                {phoneMessage}
+                            </p>
+                        )}
+
                         <input 
                             className="password-input" 
                             name="otp"
                             type="password" 
                             placeholder="Enter OTP" 
-                            required
-                            onInvalid={handleInvalid}
-                            onInput={handleInput}
+                            // required
+                            // onInvalid={handleInvalid}
+                            // onInput={handleInput}
                             onChange={(e) => setOtp(e.target.value)}
                         />
+
+                        {otpMessage && (
+                            <p 
+                                className="error-message"
+                                style={{ marginTop: '0', paddingTop: '0', frontSize: '0.3rem', color: 'cyan' }}
+                            >
+                                {otpMessage}
+                            </p>
+                        )}
                     </div>
                     <div className="statement-container">
                         <div className="statement-form">
                             <label className="statement-checkbox">
                                 <input 
                                     type="checkbox" 
-                                    name="option1" 
-                                    value="Option 1" 
-                                    required
-                                    onInvalid={handleInvalid}
-                                    onInput={handleInput}
+                                    name="agree"
+                                    id="agree" 
+                                    value="agree" 
+                                    // required
+                                    // onInvalid={handleInvalid}
+                                    // onInput={handleInput}
                                 />
                                 <span class="custom-checkbox"></span>
                                 <p>I am above 18 years of age and read and hereby accept the <span><a href="#">Terms & Conditions</a></span> and <span><a href="#">Terms & Conditions</a></span></p>
                             </label>
+
+                            {checkboxMessage && (
+                                <p 
+                                    className="error-message"
+                                    style={{ marginTop: '0', paddingTop: '0', frontSize: '0.3rem', color: 'cyan' }}
+                                >
+                                    {checkboxMessage}
+                                </p>
+                            )}
+
                             <label className="statement-checkbox">
                                 <input 
                                     type="checkbox" 
-                                    name="option2" 
-                                    value="Option 2" 
+                                    name="promotion"
+                                    id="promotion" 
+                                    value="agree" 
                                 />
                                 <span class="custom-checkbox"></span>
                                 <p>I agree to receive offers and promotional communications</p>

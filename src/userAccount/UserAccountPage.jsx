@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Accordion } from 'react-bootstrap'
 
 import '../styles/userAccount/userAccount.css'
@@ -10,24 +10,67 @@ import axios from 'axios'
 
 const UserAccountPage = () => {
 
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+    const [birthdate, setBirthdate] = useState('');
+    const [gender, setGender] = useState('');
+
+    const[isEmailVisible, setIsEmailVisible] = useState(false);
+    const [isBirthdateVisible, setIsBirthdateVisible] = useState(false);
+    const [isGenderVisible, setIsGenderVisible] = useState(false);
+
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
 
+    useEffect(() => {
+        const fetchUserIdentity = async () => {
+            try {
+                const response = await axiosInstance.get('/auth/user-details');
+                console.log(response.data.user);
+                const { name, phone, email, birthdate, gender } = response.data.user;
+
+                console.log(name, email, phone, birthdate, gender);
+
+                setName(name);
+                setPhone(phone);
+
+                if (email) {
+                    setEmail(email);
+                    setIsEmailVisible(true);
+                }
+
+                if (birthdate) {
+                    const formattedDate = new Date(birthdate).toISOString().split('T')[0];
+                    setBirthdate(formattedDate);
+                    setIsBirthdateVisible(true);
+                }
+
+                if (gender) {
+                    setGender(gender);
+                    setIsGenderVisible(true);
+                }
+
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        fetchUserIdentity();
+    }, [])
+
     const signOutClickHandler = () => {
         localStorage.removeItem('token');
-        alert('Sign out successful.');
         window.location.reload();
     }
 
     const deleteClickHandler = async () => {
         try {
-            prompt('Are you sure you want to delete your account?');
-            
-            // localStorage.removeItem('token');
             await axiosInstance.delete('/auth/delete');
-            alert('Account deleted successfully.');
+            localStorage.removeItem('token');
+            // alert('Account deleted successfully.');
             window.location.reload();
         } catch (error) {
             console.error(error);
@@ -46,10 +89,12 @@ const UserAccountPage = () => {
                 style={{width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}
             >
                 <div className="subscription-details">
-                    <p id='plan-name'>Tirtha Chakrabarti</p>
-                    <p id='plan-price'>Phone: 7047276464</p>
-                    <p id='plan-expiry'>Email: chakrabartitirtha@gmail.com</p>
-                    <p style={{color: 'lightgrey'}}>Birthdate: 6th May, 1993</p>
+                    <p id='plan-name'>Name: {name}</p>
+                    <p id='plan-price'>Phone: {phone}</p>                    
+                      
+                    {isEmailVisible && (<p style={{color: 'lightgrey'}}>Email: {email}</p>)}
+                    {isBirthdateVisible && (<p style={{color: 'lightgrey'}}>Birthdate: {birthdate}</p>)}
+                    {isGenderVisible && (<p style={{color: 'lightgrey'}}>Gender: {gender}</p>)}
                 </div>
                 <img 
                     src='https://cdn-icons-png.flaticon.com/512/149/149071.png' 
@@ -77,7 +122,7 @@ const UserAccountPage = () => {
                         <div id='edit' onClick={openModal} style={{cursor: 'pointer'}}>Edit</div>
 
                         <Modal isOpen={isModalOpen} onClose={closeModal}>
-                            <EditDetais />
+                            <EditDetais onClose={closeModal}/>
                         </Modal>
                     </div>
                     <div className="signout">
